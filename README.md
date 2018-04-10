@@ -1,14 +1,4 @@
-# VimStory
-<<<<<<< HEAD
-<<<<<<< HEAD
-# nana
-=======
-git checkout master
-git pull origin master
-git merge test
-git push origin master
->>>>>>> master
-=======
+# Payroll_Dashboard
 git checkout master
 <br />
 git pull origin master
@@ -16,4 +6,3 @@ git pull origin master
 git merge test
 <br />
 git push origin master
->>>>>>> master

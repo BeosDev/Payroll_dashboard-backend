@@ -1,13 +1,13 @@
 var mysql = require('mysql');
-var pool = mysql.createPool({
+var mysqlPool = mysql.createPool({
   connectionLimit: 10,
   host: 'localhost',
   user: 'root',
-  password: '',
-  database: 'vimstory'
+  password: 'root',
+  database: ''
 });
 
-pool.standardized = function (paramters,len) {
+mysqlPool.standardized = function (paramters,len) {
   if (paramters.length !== len) {
     for (var i = paramters.length; i < len; i++) {
       paramters[i] = null;
@@ -16,4 +16,4 @@ pool.standardized = function (paramters,len) {
   return paramters;
 }
 
-module.exports = pool;
+module.exports = mysqlPool;

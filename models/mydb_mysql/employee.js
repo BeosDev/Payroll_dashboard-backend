@@ -1,4 +1,4 @@
-var conn = require("../../config/pool_mysql")
+var conn = require("../../config/mysql")
 conn.createConnection('mydb');
 /*
 `idEmployee` int(11) NOT NULL,

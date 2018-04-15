@@ -2,12 +2,12 @@ var conn = require('../../config/sqlserver');
 
 
 function getJobHistory() {
-    var query = 'Select * From Job_History; ';
+    var query = 'Select * From Job_History ';
     return new conn.executeQuery(query);
 }
 
 function addJobHistory(paramters) {
-    var query = 'INSERT INTO Job_History SET ?;';
+    var query = 'INSERT INTO Job_History SET ? ';
     return new conn.executeQuery(query, paramters);
 }
 

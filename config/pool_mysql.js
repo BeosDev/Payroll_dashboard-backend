@@ -1,19 +1,31 @@
 var mysql = require('mysql');
-var mysqlPool = mysql.createPool({
-  connectionLimit: 10,
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: ''
-});
+var EventEmitter = require('events').EventEmitter;
+var con;
 
-mysqlPool.standardized = function (paramters,len) {
-  if (paramters.length !== len) {
-    for (var i = paramters.length; i < len; i++) {
-      paramters[i] = null;
-    }
-  }
-  return paramters;
+function createConnection(db) {
+  con = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: db
+  });
 }
 
-module.exports = mysqlPool;
+function executeQuery(cmd, paramters) {
+  con.connect();
+  var emitter = this;
+  con.query(cmd, paramters, function (err, results) {
+    if (err) {
+      emitter.emit('error', err);
+      throw err;
+    }
+    emitter.emit('results', results);
+  });
+  con.end();
+}
+
+executeQuery.prototype = new EventEmitter();
+module.exports = {
+  createConnection,
+  executeQuery
+};

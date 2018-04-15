@@ -1,6 +1,17 @@
 var conn = require('../../config/pool_mysql');
 conn.createConnection('mydb');
 
+/*
+`idPay Rates`,
+`Pay Rate Name`,
+`Value`,
+`Tax Percentage`,
+`Pay Type`,
+`Pay Amount`,
+`PT - Level C`
+*/
+
+
 function getPayRates() {
     var query = 'Select * from `pay rates`';
     return new conn.executeQuery(query);

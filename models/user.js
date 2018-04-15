@@ -1,4 +1,4 @@
-var conn = require('../config/mysql');
+var conn = require('../config/pool_mysql');
 conn.createConnection('user');
 function getUsers() {
     var query = 'SELECT * FROM user';

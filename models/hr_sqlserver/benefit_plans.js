@@ -9,7 +9,7 @@ function getData(callback)
         }
         //check for err
         var request = pool.request(connection);
-        request.query('select * from account', function(err,data){
+        request.query('select * from Benefit_Plans', function(err,data){
            
             callback(data);
         });

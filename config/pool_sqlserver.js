@@ -3,7 +3,7 @@ const pool = new sql.ConnectionPool({
     user: 'sa',
     password: '123456',
     server: 'DESKTOP-GN3V8MM\\SQLEXPRESS',
-    database: 'test'
+    database: 'HR'
 })
 
 

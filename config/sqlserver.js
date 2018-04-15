@@ -60,4 +60,4 @@ var q = {
 
 executeQuery.prototype = new EventEmitter();
 
-module.exports = executeQuery;
+module.exports = {executeQuery};

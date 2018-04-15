@@ -2,7 +2,7 @@ const sql = require('mssql');
 var EventEmitter = require('events').EventEmitter;
 const config = {
     user: 'sa',
-    password: 'chuot123',
+    password: '',
     server: 'HELLOWORLD\\SQLEXPRESS',
     database: 'HR'
 }

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 var conn = require('../../config/sqlserver');
 
 
@@ -52,4 +50,3 @@ module.exports = {
 [Hours_per_Week]
 [Hazardous_Training]
 */
->>>>>>> master

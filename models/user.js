@@ -5,7 +5,7 @@ function getUsers() {
     return new conn.executeQuery(query);
 }
 
-function getUser(username){
+function getOneUser(username){
     var query = `SELECT * FROM user WHERE username = '${username}'`;
     return new conn.executeQuery(query);
 }
@@ -30,5 +30,5 @@ module.exports = {
     addUser,
     deleteUser,
     updateUser,
-    getUser
+    getOneUser
 }

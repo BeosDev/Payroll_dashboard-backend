@@ -42,6 +42,7 @@ function executeQuery(query) {
                 emitter.emit('error', err);
                 throw err;
             }
+            console.log(result);
             emitter.emit('result', result);
         })
     })

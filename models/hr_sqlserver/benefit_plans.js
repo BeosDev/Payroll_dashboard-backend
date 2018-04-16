@@ -11,7 +11,7 @@ function getBenefitPlans() {
     return new conn.executeQuery(query);
 }
 
-function getBenefitPlan(id) {
+function getOneBenefitPlan(id) {
     var query = {
         type: 'select',
         table: 'Benefit_Plans',
@@ -57,9 +57,9 @@ module.exports = {
     updateBenefitPlans,
     deleteBenefitPlans,
     addBenefitPlans,
-    getBenefitPlan
+    getOneBenefitPlan
 }
-getBenefitPlan(1)
+//getBenefitPlan(1)
 /*
 [BenefitPlan_ID] 
 [Plan_Name]

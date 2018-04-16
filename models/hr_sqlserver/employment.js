@@ -24,7 +24,7 @@ function addEmployment(paramters){
     var query = {
         type: 'insert',
         table: 'Employment',
-        parameter: {paramters},
+        parameter: paramters,
         whereParameter: {},
     }
     return new conn.executeQuery(query, paramters);
@@ -34,7 +34,7 @@ function updateEmployment(id){
     var query = {
         type: 'update',
         table: 'Employment',
-        parameter: {paramters},
+        parameter: paramters,
         whereParameter: {'Employee_ID': id},
     }
     return new conn.executeQuery(query, paramters);
@@ -48,4 +48,12 @@ function deleteEmployment(id){
         whereParameter: {'Employee_ID': id},
     }
     return new conn.executeQuery(query);
+}
+
+module.exports = {
+    getEmployments,
+    getEmployment,
+    updateEmployment,
+    deleteEmployment,
+    addEmployment
 }

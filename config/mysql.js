@@ -23,8 +23,8 @@ function executeQuery(cmd, paramters) {
   });
   con.end();
 }
-
 executeQuery.prototype = new EventEmitter();
+
 module.exports = {
   createConnection,
   executeQuery

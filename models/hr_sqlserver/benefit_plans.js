@@ -1,4 +1,4 @@
-var pool = require('../../config/pool_sqlserver');
+var pool = require('../../config/sqlserver');
 
 function getData(callback)
 {

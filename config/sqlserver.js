@@ -3,7 +3,7 @@ var EventEmitter = require('events').EventEmitter;
 const config = {
     user: 'sa',
     password: '',
-    server: 'HELLOWORLD\\SQLEXPRESS',
+    server: 'DESKTOP-GN3V8MM\SQLEXPRESS',
     database: 'HR'
 }
 function executeQuery(query,parameters) {

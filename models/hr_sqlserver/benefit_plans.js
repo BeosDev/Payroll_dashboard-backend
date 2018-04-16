@@ -1,22 +1,69 @@
-var pool = require('../../config/pool_sqlserver');
+var conn = require('../../config/sqlserver');
 
-function getData(callback)
-{
-    var connection = pool.connect(function(err){
-        if(err)
-        {
-            throw err;
-        }
-        //check for err
-        var request = pool.request(connection);
-        request.query('select * from Benefit_Plans', function(err,data){
-           
-            callback(data);
-        });
-    });
 
+function getBenefitPlans() {
+    var query = {
+        type: 'select',
+        table: 'Benefit_Plans',
+        parameter: {},
+        whereParameter: {},
+    }
+    return new conn.executeQuery(query);
 }
-//getData(function(data){
-  //  console.log(data);
-//});
-module.exports = getData;
+
+function getBenefitPlan(id) {
+    var query = {
+        type: 'select',
+        table: 'Benefit_Plans',
+        parameter: {},
+        whereParameter: {'Benefit_Plan_ID':id},
+    }
+    return new conn.executeQuery(query);
+}
+
+function addBenefitPlans(paramters) {
+    var query = {
+        type: 'insert',
+        table: 'Benefit_Plans',
+        parameter: paramters,
+        whereParameter: {},
+    }
+    return new conn.executeQuery(query, paramters);
+}
+
+function updateBenefitPlans(paramters, id) {
+    var query = {
+        type: 'update',
+        table: 'Benefit_Plans',
+        parameter: paramters,
+        whereParameter: {'Benefit_Plan_ID': id},
+    }
+    return new conn.executeQuery(query, paramters);
+}
+
+function deleteBenefitPlans(id) {
+    var query = 'DELETE FROM Benefit_Plans WHERE Benefit_Plan_ID = ' + `${id};`;
+    var query = {
+        type: 'delete',
+        table: 'Benefit_Plans',
+        parameter: {},
+        whereParameter: {'Benefit_Plan_ID': id},
+    }
+    return new conn.executeQuery(query);
+}
+
+module.exports = {
+    getBenefitPlans,
+    updateBenefitPlans,
+    deleteBenefitPlans,
+    addBenefitPlans,
+    getBenefitPlan
+}
+getBenefitPlan(1)
+/*
+[BenefitPlan_ID] 
+[Plan_Name]
+[Deductable]
+[Percentage_CoPay]
+
+*/

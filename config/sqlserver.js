@@ -5,8 +5,8 @@ var knex = require('knex')({
 })
 const config = {
     user: 'sa',
-    password: '',
-    server: 'HELLOWORLD\\SQLEXPRESS',
+    password: '123456',
+    server: 'DESKTOP-GN3V8MM\\SQLEXPRESS',
     database: 'HR'
 }
 /*
@@ -38,6 +38,7 @@ function executeQuery(query) {
     sql.connect(config, err => {
         new sql.Request().query(cmd, (err, result) => {
             if (err) {
+                //console.log('loi');
                 emitter.emit('error', err);
                 throw err;
             }
@@ -48,14 +49,13 @@ function executeQuery(query) {
         emitter.emit('error', err);
     })
 }
-/*
+
 var q = {
-    type: 'update',
+    type: 'insert',
     table: 'Benefit_Plans',
     parameter: {Plan_Name: 'em'},
-    whereParameter: {'Benefit_Plan_ID': 2},
+    whereParameter: {'Benefit_Plan_ID': 3},
 }
-*/
 
 
 executeQuery.prototype = new EventEmitter();

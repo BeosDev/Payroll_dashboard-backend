@@ -15,7 +15,7 @@ function addJobHistory(paramters) {
     var query = {
         type: 'insert',
         table: 'Job_History',
-        parameter: {paramters},
+        parameter: paramters,
         whereParameter: {},
     }
     return new conn.executeQuery(query, paramters);
@@ -25,7 +25,7 @@ function updateJobHistory(paramters, id) {
     var query = {
         type: 'update',
         table: 'Job_History',
-        parameter: {paramters},
+        parameter: paramters,
         whereParameter: {'ID': id},
     }
     return new conn.executeQuery(query, paramters);

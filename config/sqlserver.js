@@ -48,14 +48,13 @@ function executeQuery(query) {
         emitter.emit('error', err);
     })
 }
-/*
+
 var q = {
-    type: 'update',
+    type: 'insert',
     table: 'Benefit_Plans',
     parameter: {Plan_Name: 'em'},
-    whereParameter: {'Benefit_Plan_ID': 2},
+    whereParameter: {'Benefit_Plan_ID': 3},
 }
-*/
 
 
 executeQuery.prototype = new EventEmitter();

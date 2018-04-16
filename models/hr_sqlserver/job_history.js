@@ -2,29 +2,45 @@ var conn = require('../../config/sqlserver');
 
 
 function getJobHistory() {
-    var query = 'Select * From Job_History; ';
+    var query = {
+        type: 'select',
+        table: 'Job_History',
+        parameter: {},
+        whereParameter: {},
+    }
     return new conn.executeQuery(query);
 }
 
 function addJobHistory(paramters) {
-    var query = 'INSERT INTO Job_History SET ?;';
+    var query = {
+        type: 'insert',
+        table: 'Job_History',
+        parameter: {paramters},
+        whereParameter: {},
+    }
     return new conn.executeQuery(query, paramters);
 }
 
 function updateJobHistory(paramters, id) {
-    var query = 'UPDATE Job_History SET ? WHERE ID = ' + `${id};`;
+    var query = {
+        type: 'update',
+        table: 'Job_History',
+        parameter: {paramters},
+        whereParameter: {'ID': id},
+    }
     return new conn.executeQuery(query, paramters);
 }
 
 function deleteJobHistory(id) {
     var query = 'DELETE FROM Job_History WHERE ID = ' + `${id};`;
+    var query = {
+        type: 'delete',
+        table: 'Job_History',
+        parameter: {},
+        whereParameter: {'ID': id},
+    }
     return new conn.executeQuery(query);
 }
-
-var k = new getJobHistory();
-k.on('result',res => {
-    console.log(res);
-})
 
 module.exports = {
     getJobHistory,

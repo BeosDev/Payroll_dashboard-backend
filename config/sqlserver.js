@@ -30,7 +30,7 @@ function executeQuery(query) {
             cmd = knex(query.table).insert(query.parameter).toString();
         } else if (type === 'update') {
             cmd = knex(query.table).update(query.parameter).where(query.whereParameter).toString();
-        } else if (type == 'delete') {
+        } else if (type === 'delete') {
             cmd = knex(query.table).where(query.whereParameter).del().toString();
         }
     }

@@ -23,7 +23,7 @@ function getEmployment(id){
 function addEmployment(paramters){
     var query = {
         type: 'insert',
-        table: 'Job_History',
+        table: 'Employment',
         parameter: {paramters},
         whereParameter: {},
     }

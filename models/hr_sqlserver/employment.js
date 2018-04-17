@@ -1,26 +1,51 @@
 var conn = require('../../config/sqlserver');
 
 function getEmployments(){
-    var cmd = "select * from Employment";
-    conn.executeQuery(cmd);
+    var query = {
+        type: 'select',
+        table: 'Employment',
+        parameter: {},
+        whereParameter: {},
+    }
+    return new conn.executeQuery(query);
 }
 
 function getEmployment(id){
-    var cmd = "select * from Employment where Employee_ID = "+`${id}`;
-    conn.executeQuery(cmd);
+    var query = {
+        type: 'select',
+        table: 'Employment',
+        parameter: {},
+        whereParameter: {'Employee_ID':id},
+    }
+    return new conn.executeQuery(query);
 }
 
-function addEmployment(employment){
-    var cmd = "insert Employment set ?"
-    conn.executeQuery(cmd,employment);
+function addEmployment(paramters){
+    var query = {
+        type: 'insert',
+        table: 'Job_History',
+        parameter: {paramters},
+        whereParameter: {},
+    }
+    return new conn.executeQuery(query, paramters);
 }
 
 function updateEmployment(id){
-    var cmd = "insert Employment set ? where Employee_ID = "+`${id}`;
-    conn.executeQuery(cmd);
+    var query = {
+        type: 'update',
+        table: 'Employment',
+        parameter: {paramters},
+        whereParameter: {'Employee_ID': id},
+    }
+    return new conn.executeQuery(query, paramters);
 }
 
 function deleteEmployment(id){
-    var cmd = "delete from Employment here Employee_ID = "+`${id}`;
-    conn.executeQuery(cmd);
+    var query = {
+        type: 'delete',
+        table: 'Employment',
+        parameter: {},
+        whereParameter: {'Employee_ID': id},
+    }
+    return new conn.executeQuery(query);
 }

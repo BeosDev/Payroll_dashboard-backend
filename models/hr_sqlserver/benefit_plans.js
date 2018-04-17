@@ -59,7 +59,6 @@ module.exports = {
     addBenefitPlans,
     getBenefitPlan
 }
-getBenefitPlan(1)
 /*
 [BenefitPlan_ID] 
 [Plan_Name]

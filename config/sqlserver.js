@@ -4,10 +4,10 @@ var knex = require('knex')({
     client: 'mssql'
 })
 const config = {
-    user: 'sa',
-    password: '123456',
-    server: 'DESKTOP-GN3V8MM\\SQLEXPRESS',
-    database: 'HR'
+    user: 'hrn',
+    password: 'Ur6e2R_4qu_d',
+    server: 'den1.mssql5.gear.host',
+    database: 'hrn'
 }
 /*
 query = {
@@ -42,7 +42,6 @@ function executeQuery(query) {
                 emitter.emit('error', err);
                 throw err;
             }
-            console.log(result);
             emitter.emit('result', result);
         })
     })

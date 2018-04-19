@@ -59,10 +59,8 @@ module.exports = {
     addBenefitPlans,
     getOneBenefitPlan
 }
-<<<<<<< HEAD
-=======
-//getBenefitPlan(1)
->>>>>>> master
+
+
 /*
 [BenefitPlan_ID] 
 [Plan_Name]

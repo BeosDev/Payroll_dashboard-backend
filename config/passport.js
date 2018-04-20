@@ -27,20 +27,4 @@ module.exports = function () {
             return done(null, false);
         })
     }))
-
-    passport.use('local-signup', new LocalStrategy({
-        usernameField: 'username',
-        passwordField: 'password',
-        passReqToCallback: true
-    }, function (req, username, password, done) {
-        var User = new UserModel.getOneUser(username);
-        User.once('results', function (result) {
-            if (result.length === 0)
-                return done(null, false);
-            return done(null, result[0]);
-        })
-        User.once('error', function (err) {
-            return done(null, false);
-        })
-    }))
 }

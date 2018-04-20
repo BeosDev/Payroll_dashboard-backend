@@ -1,3 +1,5 @@
+var bcrypt = require('bcrypt-nodejs');
+
 var conn = require('../config/mysql');
 conn.createConnection('muser');
 function getUsers() {
@@ -25,10 +27,22 @@ function updateUser(paramters, username) {
     return new conn.executeQuery(query, paramters);
 }
 
+function genHash(password){
+    return bcrypt.hashSync(password,bcrypt.genSaltSync(6));
+}
+
+function validPassword(rawPw,pwHashed){
+    return bcrypt.compareSync(rawPw,pwHashed);
+}
+
+// var k = new addUser({username: 'admin',password: genHash('admin'),name: 'linh',roleId: 1});
+// k.on('result',res => console.log(res));
 module.exports = {
     getUsers,
     addUser,
     deleteUser,
     updateUser,
-    getOneUser
+    getOneUser,
+    genHash,
+    validPassword
 }

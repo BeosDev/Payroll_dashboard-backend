@@ -18,17 +18,22 @@ function getEmployees(){
     return new conn.executeQuery(query);
 }
 
-function getEmployee(id){
-    var query = 'select * from `employee` where'+ `${id}`;
+function getEmployeeByIdEmployee(id){
+    var query = 'select * from `employee` where `idEmployee` = '+ `${id}`;
     return new conn.executeQuery(query);
 }
 
-function addEmployee(){
+function getEmployeeByEmployeeNumber(num){
+    var query = 'select * from `employee` where `Employee Number` = '+ `${num}`;
+    return new conn.executeQuery(query);
+}
+
+function addEmployee(paramters){
     var query = 'INSERT INTO `employee` SET ?;';
     return new conn.executeQuery(query, paramters);
 }
 
-function updateEmployee(id){
+function updateEmployee(id,paramters){
     var query = 'UPDATE `employee` SET ? WHERE `idEmployee` = ' + `${id};`;
     return new conn.executeQuery(query, paramters);
 }
@@ -37,3 +42,25 @@ function deleteEmployee(id){
     var query = 'DELETE FROM `employee` WHERE `idEmployee` = ' + `${id};`;
     return new conn.executeQuery(query);
 }
+
+function getVacationDaysByEmployeeNumber(num){
+    var query = 'select `Vacation Days` From `employee` where `Employee Number` = ' + `${num};`;
+    return new conn.executeQuery(query);
+}
+
+function getVacationDaysByIdEmployee(id){
+    var query = 'select `Vacation Days` From `employee` where `idEmployee` = ' + `${id};`;
+    return new conn.executeQuery(query);
+}
+
+module.exports = {
+    getEmployeeByEmployeeNumber,
+    getEmployeeByIdEmployee,
+    getEmployees,
+    getVacationDaysByEmployeeNumber,
+    getVacationDaysByIdEmployee,
+    addEmployee,
+    updateEmployee,
+    deleteEmployee
+}
+

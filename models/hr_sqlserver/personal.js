@@ -1,7 +1,7 @@
 var conn = require('../../config/sqlserver');
 
 
-function getPersonals() {
+function getPersons() {
     var query = {
         type: 'select',
         table: 'Personal',
@@ -11,7 +11,7 @@ function getPersonals() {
     return new conn.executeQuery(query);
 }
 
-function getOnePersonal(id) {
+function getPerson(id) {
     var query = {
         type: 'select',
         table: 'Personal',
@@ -21,7 +21,7 @@ function getOnePersonal(id) {
     return new conn.executeQuery(query);
 }
 
-function addPersonal(paramters) {
+function addPerson(paramters) {
     var query = {
         type: 'insert',
         table: 'Personal',
@@ -31,7 +31,7 @@ function addPersonal(paramters) {
     return new conn.executeQuery(query, paramters);
 }
 
-function updatePersonal(paramters, id) {
+function updatePerson(paramters, id) {
     var query = {
         type: 'update',
         table: 'Personal',
@@ -41,7 +41,7 @@ function updatePersonal(paramters, id) {
     return new conn.executeQuery(query, paramters);
 }
 
-function deletePersonal(id) {
+function deletePerson(id) {
     var query = 'DELETE FROM Personals WHERE Employee_ID = ' + `${id};`;
     var query = {
         type: 'delete',
@@ -53,11 +53,11 @@ function deletePersonal(id) {
 }
 
 module.exports = {
-    getPersonals,
-    updatePersonal,
-    deletePersonal,
-    addPersonal,
-    getOnePersonal
+    getPersons,
+    updatePerson,
+    deletePerson,
+    addPerson,
+    getOnePerson
 }
 //deletePersonal(2)
 /*

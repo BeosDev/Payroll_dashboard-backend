@@ -66,5 +66,4 @@ module.exports = {
 [Plan_Name]
 [Deductable]
 [Percentage_CoPay]
-
 */

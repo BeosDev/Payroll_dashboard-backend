@@ -14,7 +14,7 @@ conn.createConnection('mydb');
 */
 
 function getEmployees(){
-    var query = "select * from `employee`"
+    var query = "select * from `employee` ;"
     return new conn.executeQuery(query);
 }
 

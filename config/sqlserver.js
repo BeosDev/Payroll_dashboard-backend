@@ -42,7 +42,7 @@ function executeQuery(query) {
                 emitter.emit('error', err);
                 throw err;
             }
-            emitter.emit('result', result);
+            emitter.emit('results', result);
         })
     })
     sql.on('error', err => {

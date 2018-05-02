@@ -35,17 +35,37 @@ function executeQuery(query) {
         }
     }
     console.log(cmd);
-    sql.connect(config, err => {
-        new sql.Request().query(cmd, (err, result) => {
+    // sql.connect(config, err => {
+    //     new sql.Request().query(cmd, (err, result) => {
+    //         if (err) {
+    //             //console.log('loi');
+    //             emitter.emit('error', err);
+    //             throw err;
+    //         }
+    //         emitter.emit('results', result);
+    //     })
+    // })
+    // sql.on('error', err => {
+    //     emitter.emit('error', err);
+    // })
+
+    const pool = new sql.ConnectionPool(config, err => {
+        if (err){
+            return emitter.emit('error',err);
+        }
+        pool.request() // or: new sql.Request(pool1)
+        .query(cmd, (err, result) => {
             if (err) {
                 //console.log('loi');
                 emitter.emit('error', err);
-                throw err;
+                return err;
             }
             emitter.emit('results', result);
         })
+     
     })
-    sql.on('error', err => {
+     
+    pool.once('error', err => {
         emitter.emit('error', err);
     })
 }

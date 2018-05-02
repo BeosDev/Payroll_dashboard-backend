@@ -3,13 +3,13 @@ var employMYSQL = require('../models/mydb_mysql/employee');
 
 function getDataEmployment(req,res){
     var emMSSQL = new employMSSQL.getEmployments();
-    var emMYSQL = new emMYSQL.getEmployees();
+  //  var emMYSQL = new emMYSQL.getEmployees();
     emMSSQL.once('results',function(dataMSSQL){
-        emMYSQL.once('results',function(dataMYSQL){
+   //     emMYSQL.once('results',function(dataMYSQL){
+   //         console.log(dataMSSQL);
             console.log(dataMSSQL);
-            console.log(dataMYSQL);
             res.end('done');
-        })
+   //     })
     })
 }
 

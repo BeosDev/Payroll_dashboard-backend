@@ -12,14 +12,16 @@ function createConnection(db) {
 }
 
 function executeQuery(cmd, paramters) {
+  con.connect();
   var emitter = this;
-  con.query(cmd, paramters, function (err, result) {
+  con.query(cmd, paramters, function (err, results) {
     if (err) {
       emitter.emit('error', err);
       throw err;
     }
-    emitter.emit('result', result);
+    emitter.emit('results', results);
   });
+  con.end();
 }
 executeQuery.prototype = new EventEmitter();
 

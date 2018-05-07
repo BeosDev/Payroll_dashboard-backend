@@ -14,11 +14,11 @@ conn.createConnection('mydb');
 */
 
 function getEmployees(){
-    var query = "select * from `employee`"
+    var query = "select * from `employee` ;"
     return new conn.executeQuery(query);
 }
 
-function getEmployee(id){
+function getOneEmployee(id){
     var query = 'select * from `employee` where'+ `${id}`;
     return new conn.executeQuery(query);
 }
@@ -36,4 +36,12 @@ function updateEmployee(id){
 function deleteEmployee(id){
     var query = 'DELETE FROM `employee` WHERE `idEmployee` = ' + `${id};`;
     return new conn.executeQuery(query);
+}
+
+module.exports = {
+    getEmployees,
+    addEmployee,
+    updateEmployee,
+    deleteEmployee,
+    getOneEmployee
 }

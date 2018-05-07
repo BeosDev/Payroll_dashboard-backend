@@ -1,8 +1,8 @@
-var conn = require('../../config/pool_mysql');
+var conn = require('../../config/mysql');
 conn.createConnection('mydb');
 
 function getPayRates() {
-    var query = 'Select * from `pay rates`';
+    var query = 'Select * from `pay_rates`';
     return new conn.executeQuery(query);
 }
 
@@ -32,7 +32,7 @@ var para = {
     'PT - Level C': 5
 }
 
-var k = new deletePayRate(5);
+var k = new getPayRates();
 k.on('results',function(results){
     console.log(results);
 })

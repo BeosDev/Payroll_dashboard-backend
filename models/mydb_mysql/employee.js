@@ -1,5 +1,6 @@
 var conn = require("../../config/mysql")
 conn.createConnection('mydb');
+
 /*
 `idEmployee` int(11) NOT NULL,
   `Employee Number` int(10) unsigned NOT NULL,
@@ -28,7 +29,7 @@ function addEmployee(){
     return new conn.executeQuery(query, paramters);
 }
 
-function updateEmployee(id){
+function updateEmployee(paramters,id){
     var query = 'UPDATE `employee` SET ? WHERE `idEmployee` = ' + `${id};`;
     return new conn.executeQuery(query, paramters);
 }

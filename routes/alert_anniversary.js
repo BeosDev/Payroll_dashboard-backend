@@ -1,1 +1,7 @@
-var express = require('express');
+var router = require('express').Router;
+
+router.get('/',function(req,res){
+
+});
+
+module.exports = router;

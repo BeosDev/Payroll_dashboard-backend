@@ -1,12 +1,18 @@
 module.exports = {
-    authAdmin: function (req, res, next) {
-        if (req.isAuthenticated() && req.user.roleId === 1) {
+    isLoggined: function(req,res,next){
+        if (req.isAuthenticated()) {
             next();
         }
         res.redirect('/');
     },
-    authUser: function (req,res,next){
-        if (req.isAuthenticated() && req.user.roleId === 2) {
+    isAdmin: function (req, res, next) {
+        if (req.user.roleId === 1) {
+            next();
+        }
+        res.redirect('/');
+    },
+    isUser: function (req,res,next){
+        if (req.user.roleId === 2) {
             next();
         }
         res.redirect('/');

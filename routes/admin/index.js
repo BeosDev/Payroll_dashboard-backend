@@ -1,4 +1,4 @@
-var router = require('express').Router();
+var router = require('express').Router;
 var auth = require('../auth');
 
 //router.use(auth.authAdmin);

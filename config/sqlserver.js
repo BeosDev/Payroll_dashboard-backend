@@ -32,6 +32,8 @@ function executeQuery(query) {
             cmd = knex(query.table).update(query.parameter).where(query.whereParameter).toString();
         } else if (type === 'delete') {
             cmd = knex(query.table).where(query.whereParameter).del().toString();
+        } else if (type === 'join'){
+            cmd = knex(query.table).join(query.joinParameter.table, query.joinParameter.col1, '=', query.joinParameter.col2).where(query.whereParameter);
         }
     }
     console.log(cmd);
@@ -71,13 +73,16 @@ function executeQuery(query) {
 }
 
 var q = {
-    type: 'insert',
+    type: 'select',
     table: 'Benefit_Plans',
-    parameter: {Plan_Name: 'em'},
+    parameter: {},
     whereParameter: {'Benefit_Plan_ID': 3},
 }
-
-
 executeQuery.prototype = new EventEmitter();
+// var k = new executeQuery(q);
+// k.once('results',data => {console.log(data)});
+
+
+
 
 module.exports = {executeQuery};

@@ -30,7 +30,7 @@ function addEmployment(paramters){
     return new conn.executeQuery(query, paramters);
 }
 
-function updateEmployment(id){
+function updateEmployment(paramters,id){
     var query = {
         type: 'update',
         table: 'Employment',

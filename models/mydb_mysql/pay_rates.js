@@ -1,8 +1,8 @@
-var conn = require('../../config/pool_mysql');
+var conn = require('../../config/mysql');
 conn.createConnection('mydb');
 
 function getPayRates() {
-    var query = 'Select * from `pay rates`';
+    var query = 'Select `idPay Rates` as idPay_Rates,`Pay Rate Name` as Pay_Rate_Name,Value,`Tax Percentage` as Tax_Percentage,`Pay Type` as Pay_Type, `Pay Amount` as Pay_Amount, `PT - Level C` as PT_Level from `pay rates`';
     return new conn.executeQuery(query);
 }
 
@@ -20,6 +20,15 @@ function deletePayRate(id) {
     var query = 'DELETE FROM `pay rates` WHERE `idPay Rates` = ' + `${id};`;
     return new conn.executeQuery(query);
 }
+function getTotalEarningPage(){
+    var query = 'Select `Employee Number` as EmployeeNumber,Value from `pay rates` inner join employee on `pay rates`.`idPay Rates` = employee.`Pay Rates_idPay Rates`';
+    return new conn.executeQuery(query);
+}
+
+function getTopId(){
+    var query = 'Select `idPay Rates` as topId from `pay rates` order by `idPay Rates` desc LIMIT 1';
+    return new conn.executeQuery(query);
+}
 
 /*
 var para = {
@@ -32,16 +41,18 @@ var para = {
     'PT - Level C': 5
 }
 
-var k = new deletePayRate(5);
+var k = new getPayRates();
 k.on('results',function(results){
     console.log(results);
-})
-*/
+})*/
+
 
 
 module.exports = {
     getPayRates,
     updatePayRate,
     deletePayRate,
-    addPayRate
+    addPayRate,
+    getTotalEarningPage,
+    getTopId
 }

@@ -280,7 +280,7 @@
                         <div class =" row">
 
                             <div class = "col-md-10">
-                                <h4 class="modal-title" style="color: darkblue;">Add new Benefit Plan</h4>
+                                <h4 class="modal-title" style="color: darkblue;">Add new Pay rate</h4>
                             </div>
                             <div class = "col-md-2">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -294,50 +294,50 @@
                 <div class="modal-body">
                     <div class="row" style ="padding-left: 10%">                         
                         <div>
-                            <form action="" class="form-inline " style="background-color: white;">                                                                            
+                            <form action="/admin/pay-rate/add" class="form-inline " style="background-color: white;" method="post">                                                                            
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         PayRate Name:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Payrate_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Payrate_Name" id="Add_Payrate_Name" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Value:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Value" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Value" id="Add_Value" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Tax Percentage:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Tax_Percentage" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Tax_Percentage" id="Add_Tax_Percentage" class="form-control" size="35">                                                                                 
                                 </div>
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Pay Type:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Pay_Type" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Pay_Type" id="Add_Pay_Type" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Pay Amount:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Pay_Amount" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Pay_Amount" id="Add_Pay_Amount" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         PT Level:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_PT_Level" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_PT_Level" id="Add_PT_Level" class="form-control" size="35">                                                                                 
                                 </div>    
                                         
-                            </form>
+                            
                         </div>
 
                     </div>
@@ -345,7 +345,8 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    <button type="submit" class="btn btn-primary" >Ok</button>
+                    </form>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
                 </div>   
             </div>
@@ -378,58 +379,58 @@
                 <div class="modal-body">
                     <div class="row" style ="padding-left: 10%">                         
                         <div>
-                            <form action="" class="form-inline " style="background-color: white;">                                               
+                            <form action="/admin/pay-rate/edit" class="form-inline " style="background-color: white;" method="post">                                               
 
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         PayRate ID:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Payrate_ID" class="form-control" size="35" disabled="">                                                                                 
+                                    <input type="text" name="Edit_Payrate_ID" id="Edit_Payrate_ID" class="form-control" size="35" readonly>                                                                                 
                                 </div> 
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         PayRate Name:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Payrate_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Payrate_Name" id="Edit_Payrate_Name" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Value:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Value" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Value" id="Edit_Value" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Tax Percentage:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Tax_Percentage" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Tax_Percentage" id="Edit_Tax_Percentage" class="form-control" size="35">                                                                                 
                                 </div>
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Pay Type:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Pay_Type" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Pay_Type" id="Edit_Pay_Type" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Pay Amount:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Pay_Amount" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Pay_Amount" id="Edit_Pay_Amount" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         PT Level:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_PT_Level" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_PT_Level" id="Edit_PT_Level" class="form-control" size="35">                                                                                 
                                 </div>    
                                         
-                            </form>
+                            
                         </div>
                         
                     </div>
@@ -437,7 +438,8 @@
                 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    <button type="submit" class="btn btn-primary" >Ok</button>
+                    </form>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
                 </div>   
             </div>
@@ -658,6 +660,9 @@
 
             },
             'click .remove': function (e, value, row, index) {  // delete củ l lắm lúc chạy lúc k
+                $.get("/admin/pay-rate/delete/"+row.Payrate_ID,function(data, status){
+                    alert("Delete completed");
+                });
                 $table.bootstrapTable('remove', {
                     field: 'Payrate_ID',
                     values: [row.Payrate_ID]

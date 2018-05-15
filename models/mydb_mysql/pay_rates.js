@@ -24,6 +24,12 @@ function getTotalEarningPage(){
     var query = 'Select `Employee Number` as EmployeeNumber,Value from `pay rates` inner join employee on `pay rates`.`idPay Rates` = employee.`Pay Rates_idPay Rates`';
     return new conn.executeQuery(query);
 }
+
+function getTopId(){
+    var query = 'Select `idPay Rates` as topId from `pay rates` order by `idPay Rates` desc LIMIT 1';
+    return new conn.executeQuery(query);
+}
+
 /*
 var para = {
     'idPay Rates': 5,
@@ -47,5 +53,6 @@ module.exports = {
     updatePayRate,
     deletePayRate,
     addPayRate,
-    getTotalEarningPage
+    getTotalEarningPage,
+    getTopId
 }

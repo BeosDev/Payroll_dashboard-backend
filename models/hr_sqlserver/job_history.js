@@ -18,7 +18,7 @@ function addJobHistory(paramters,fn) {
         parameter: paramters,
         whereParameter:{},
     }
-    return new conn.executeQuery(query);
+    return new conn.executeQuery(query,paramters);
 }
 
 function updateJobHistory(paramters, id) {

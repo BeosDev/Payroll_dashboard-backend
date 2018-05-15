@@ -4,10 +4,10 @@ var knex = require('knex')({
     client: 'mssql'
 })
 const config = {
-    user: 'hrn',
-    password: 'Ur6e2R_4qu_d',
-    server: 'den1.mssql5.gear.host',
-    database: 'hrn'
+    user: 'sa',
+    password: '123456',
+    server: 'localhost',
+    database: 'HR'
 }
 /*
 query = {

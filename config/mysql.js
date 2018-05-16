@@ -12,7 +12,6 @@ function executeQuery(cmd, paramters) {
   con.query(cmd, paramters, function (err, results) {
     if (err) {
       emitter.emit('error', err);
-      throw err;
     }
     emitter.emit('results', results);
   });

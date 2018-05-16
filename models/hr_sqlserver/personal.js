@@ -61,7 +61,6 @@ function getTotalEarningPerson()
     return new conn.executeQuery(query);
 }
 
-getPersons();
 module.exports = {
     getPersons,
     updatePerson,

@@ -1,4 +1,5 @@
 var personModel = require('../../models/hr_sqlserver/personal');
+var benefitPlanModel = require('../../models/hr_sqlserver/benefit_plans');
 
 function getPerson() {
 
@@ -6,9 +7,15 @@ function getPerson() {
 
 function getPersonPage(req,res) {
     var personData = new personModel.getPersons();
-    personData.once('results', function (results) {
-        console.log(results);
-        res.render('admin/personal', { data: results });
+    var benefitPlanData = new benefitPlanModel.getBenefitPlans();
+    personData.once('results', function (persons) {
+        benefitPlanData.once('results', function(benefitPlans){
+            res.render('admin/personal', { data: persons.recordset, data1: benefitPlans.recordset });
+        });
+        benefitPlanData.once('error', function (error) {
+            console.log(error);
+            res.render('error');
+        });
     });
     personData.once('error', function (error) {
         console.log(error);

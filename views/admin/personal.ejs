@@ -274,12 +274,18 @@
                         <td><%=data[i].Email%></td>
                         <td><%=data[i].Phone_Number%></td>
                         <td><%=data[i].Social_Security_Number%></td>
-                        <td><%=data[i].Driver_License%></td>
-                        <td><%=data[i].Marital_Status%></td>
-                        <td><%=data[i].Gender%></td>
-                        <td><%=data[i].Shareholder_Status%></td>
-                        <td><%=data[i].Benenifit_Plans%></td>
-                        <td><%=data[i].Ethinicity%></td>
+                        <td><%=data[i].Drivers_License%></td>
+                        <td><%=data[i].Marital_Status?'Marriaged':'Single'%></td>
+                        <td><%=data[i].Gender?'Male':'Female'%></td>
+                        <td><input type="checkbox" name="" id="" checked="<%=data[i].Shareholder_Status%>"></td>
+                        <td>
+                            <%for(var j = 0; j < data1.length; j++){%>
+                                <%if(data[i].Benefit_Plans == data1[j].Benefit_Plan_ID){%>
+                                    <%=data[j].Plan_Name%>
+                                <%}%>
+                            <%}%>
+                        </td>
+                        <td><%=data[i].Ethnicity%></td>
                         <td></td>
                     </tr>
                     <%}%>
@@ -293,6 +299,7 @@
     <!-- Modal Add new-->
     <div class="modal fade" id="AddModal">
         <div class="modal-dialog " style ="width: 1250px">
+            <form action="/admin/personal/add" class="form-inline" style="background-color: white;">
             <div class="modal-content">
 
                 <!-- Modal Header -->
@@ -315,7 +322,7 @@
                 <div class="modal-body">
                     <div class="row" style ="padding-left: 2%">                         
                         <div>
-                            <form action="" class="form-inline " style="background-color: white;">                                               
+                                                                           
 
 							<div class = "col-md-6">
                                 
@@ -408,28 +415,34 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Marital status:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Marital_Status" class="form-control" size="35">                                                                                 
+                                    <input type="radio" name="Add_Marital_Status" id="Add_Marital_Status" class="form-control">Single
+                                    <input type="radio" name="Add_Marital_Status" id="Add_Marital_Status" class="form-control">Marriaged                                                                        
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Gender:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Gender" class="form-control" size="35">                                                                                 
+                                    <input type="radio" name="Add_Gender" id="Add_Gender" class="form-control">Male
+                                    <input type="radio" name="Add_Gender" id="Add_Gender" class="form-control">Female                                             
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Shareholder status:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Shareholder_Status" class="form-control" size="35">                                                                                 
+                                    <input type="checkbox" name="Add_Shareholder_Status" id="Add_Shareholder_Status" class="form-control"> Is a Shareholder?                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Benefit plan:
-                                    </label>                                              
-                                    <input type="text" name="" id="Add_Benefit_Plan" class="form-control" size="35">                                                                                 
+                                    </label>
+                                    <select name="" id="Add_Benefit_Plan" class="form-control">
+                                        <%for(var i = 0; i < data1.length; i++){%>
+                                            <option value="<%=data1[i].Benefit_Plan_ID%>"><%=data1[i].Plan_Name%></option>
+                                        <%}%>
+                                    </select>                                              
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
@@ -439,7 +452,7 @@
                                     <input type="text" name="" id="Add_Ethnicity" class="form-control" size="35">                                                                                 
                                 </div>     
                                 </div>                                        
-                            </form>
+                           
                         </div>
 
                     </div>
@@ -447,10 +460,11 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    <button type="submit" class="btn btn-primary">Ok</button>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
                 </div>   
             </div>
+             </form>
         </div>
     </div>         
     <!--/////////////////////////////////////////////////////////////////////////////// -->  

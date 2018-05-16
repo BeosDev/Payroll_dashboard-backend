@@ -1,18 +1,19 @@
 var UserModel = require('../models/user');
 
 function getUsers(req,res){
-    var user = new UserModel.getUsers();
-    user.on('results',function(results){
-        if (results.length > 0){
-            console.log(results);
-            res.end('ok');
-        }
-        else
-            res.end('No data');
-    })
-    user.on('error',function(err){
-        res.end('err');
-    })
+    var user = new UserModel.getUserAndRole();
+    user.once('results',ress => console.log(ress));
+    user.once('error',ress => console.log(ress));
+    // user.once('results',function(results){
+    //     if (results.length > 0){
+    //         res.render('admin/userManager',{data:results});
+    //     }
+    //     else
+    //     res.render('admin/userManager',{data:[]});
+    // })
+    // user.once('error',function(err){
+    //     res.render('admin/userManager',{data:[]});
+    // })
 }
 
 function addUser(req,res){

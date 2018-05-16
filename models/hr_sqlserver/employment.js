@@ -51,6 +51,7 @@ function deleteEmployment(id){
 }
 
 
+
 module.exports = {
     getEmployments,
     getOneEmployment,

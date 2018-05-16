@@ -24,8 +24,8 @@ function getOneEmployee(id){
     return new conn.executeQuery(query);
 }
 
-function addEmployee(){
-    var query = 'INSERT INTO `employee` SET ?;';
+function addEmployee(paramters){
+    var query = 'INSERT INTO employee SET ? ';
     return new conn.executeQuery(query, paramters);
 }
 
@@ -39,6 +39,18 @@ function deleteEmployee(id){
     return new conn.executeQuery(query);
 }
 
+// var q = {
+//     'idEmployee': null,
+//     'Employment_Status': null,
+//     'Hire_Date': null,
+//     'Workers_Comp_Code': null,
+//     'Termination_Date': null,
+//     'Rehire_Date': null,
+//     'Last_Review_Date': null
+// }
+// var k = new addEmployee(q);
+// k.once('results',r => console.log(r));
+// k.once('error',err => console.log(err));
 module.exports = {
     getEmployees,
     addEmployee,

@@ -5,4 +5,15 @@ router.get('/',function(req,res){
     employmentController.getEmployment(req,res);
 })
 
+router.post('/add',function(req,res){
+    employmentController.addEmployment(req,res);
+})
+
+router.post('/update',function(req,res){
+    employmentController.updateEmployment(req,res);
+})
+
+router.get('/delete',function(req,res){
+    employmentController.deleteEmployment(req,res);
+})
 module.exports = router;

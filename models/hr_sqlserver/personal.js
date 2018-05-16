@@ -60,6 +60,8 @@ function getTotalEarningPerson()
                 +' inner join Job_History on Personal.Employee_ID = Job_History.Employee_ID';
     return new conn.executeQuery(query);
 }
+
+getPersons();
 module.exports = {
     getPersons,
     updatePerson,

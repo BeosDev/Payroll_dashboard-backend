@@ -2,31 +2,31 @@ var conn = require('../../config/mysql');
 conn.createConnection('mydb');
 
 function getPayRates() {
-    var query = 'Select `idPay Rates` as idPay_Rates,`Pay Rate Name` as Pay_Rate_Name,Value,`Tax Percentage` as Tax_Percentage,`Pay Type` as Pay_Type, `Pay Amount` as Pay_Amount, `PT - Level C` as PT_Level from `pay rates`';
+    var query = 'Select `idPay_Rates` as idPay_Rates,`Pay_Rate_Name` as Pay_Rate_Name,Value,`Tax_Percentage` as Tax_Percentage,`Pay_Type` as Pay_Type, `Pay_Amount` as Pay_Amount, `PT_Level_C` as PT_Level from `pay_rates`';
     return new conn.executeQuery(query);
 }
 
 function addPayRate(paramters) {
-    var query = 'INSERT INTO `pay rates` SET ?;';
+    var query = 'INSERT INTO `pay_rates` SET ?;';
     return new conn.executeQuery(query, paramters);
 }
 
 function updatePayRate(paramters, id) {
-    var query = 'UPDATE `pay rates` SET ? WHERE `idPay Rates` = ' + `${id};`;
+    var query = 'UPDATE `pay_rates` SET ? WHERE `idPay_Rates` = ' + `${id};`;
     return new conn.executeQuery(query, paramters);
 }
 
 function deletePayRate(id) {
-    var query = 'DELETE FROM `pay rates` WHERE `idPay Rates` = ' + `${id};`;
+    var query = 'DELETE FROM `pay_rates` WHERE `idPay_Rates` = ' + `${id};`;
     return new conn.executeQuery(query);
 }
 function getTotalEarningPage(){
-    var query = 'Select `Employee Number` as EmployeeNumber,Value from `pay rates` inner join employee on `pay rates`.`idPay Rates` = employee.`Pay Rates_idPay Rates`';
+    var query = 'Select `Employee_Number` as EmployeeNumber,Value from `pay_rates` inner join employee on `pay_rates`.`idPay_Rates` = employee.`Pay Rates_idPay_Rates`';
     return new conn.executeQuery(query);
 }
 
 function getTopId(){
-    var query = 'Select `idPay Rates` as topId from `pay rates` order by `idPay Rates` desc LIMIT 1';
+    var query = 'Select `idPay Rates` as topId from `pay_rates` order by `idPay_Rates` desc LIMIT 1';
     return new conn.executeQuery(query);
 }
 

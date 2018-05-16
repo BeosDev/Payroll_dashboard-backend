@@ -18,7 +18,7 @@ function getEmployees(){
     return new conn.executeQuery(query);
 }
 
-function getOneEmployee(id){
+function getEmployeeByEmployeeId(id){
     var query = 'select * from `employee` where  `idEmployee` = '+ `${id}`;
     return new conn.executeQuery(query);
 }
@@ -55,7 +55,7 @@ function getVacationDaysByIdEmployee(id){
 
 module.exports = {
     getEmployeeByEmployeeNumber,
-    getEmployeeByIdEmployee,
+    getEmployeeByEmployeeId,
     getEmployees,
     getVacationDaysByEmployeeNumber,
     getVacationDaysByIdEmployee,

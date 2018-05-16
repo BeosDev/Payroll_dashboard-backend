@@ -30,23 +30,11 @@ function updateUser(paramters, username) {
     return new conn.executeQuery(query, paramters);
 }
 
-function genHash(password){
-    return bcrypt.hashSync(password,bcrypt.genSaltSync(6));
-}
-
-function validPassword(rawPw,pwHashed){
-    return bcrypt.compareSync(rawPw,pwHashed);
-}
-
-var k = new getUserAndRole();
-k.once('results',re => console.log(re));
 module.exports = {
     getUsers,
     addUser,
     deleteUser,
     updateUser,
     getOneUser,
-    genHash,
-    validPassword,
     getUserAndRole
 }

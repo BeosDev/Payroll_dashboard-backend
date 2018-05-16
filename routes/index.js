@@ -4,6 +4,7 @@ var auth = require('./auth');
 //router.use(auth.authUser);
 
 router.use('/login',require('./login'));
+router.use('/logout',require('./logout'));
 router.use('/admin',require('./admin'));
 router.use('/alert-aniversary',require('./alert_anniversary'));
 // router.use('/alert-benefit-plan',require('./alert_benefit_plan'));

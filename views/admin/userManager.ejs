@@ -264,13 +264,21 @@
                             <tbody>
                                 <%for(var i=0;i<data.length;i++){%>
                                     <tr>
-                                        <td><%=data[i].username%></td>
-                                        <td><%=data[i].password%></td>
-                                        <td><%=data[i].name%></td>
-                                        <td><%=data[i].roleName%></td>
+                                        <td>
+                                            <%=data[i].username%>
+                                        </td>
+                                        <td>
+                                            <%=data[i].password%>
+                                        </td>
+                                        <td>
+                                            <%=data[i].name%>
+                                        </td>
+                                        <td>
+                                            <%=data[i].roleName%>
+                                        </td>
                                         <td></td>
                                     </tr>
-                                <%}%>
+                                    <%}%>
                             </tbody>
                         </table>
                     </div>
@@ -303,37 +311,37 @@
                             <div class="modal-body">
                                 <div class="row" style="padding-left: 10%">
                                     <div>
-                                        <form action="" class="form-inline " style="background-color: white;">
-
+                                        <form action="/admin/user-management/add" method="POST" class="form-inline " style="background-color: white;">
                                             <div style="padding-bottom: 10px">
                                                 <label for="" class="col-md-4" style="padding-top: 10px">
                                                     Username:
                                                 </label>
-                                                <input type="text" name="" id="Add_Username" class="form-control" size="35">
+                                                <input type="text" name="username" id="Add_Username" class="form-control" size="35">
                                             </div>
 
                                             <div style="padding-bottom: 10px">
                                                 <label for="" class="col-md-4" style="padding-top: 10px">
                                                     Password:
                                                 </label>
-                                                <input type="Password" name="" id="Add_Password" class="form-control" id="pwd" size="35">
+                                                <input type="Password" name="password" id="Add_Password" class="form-control" id="pwd" size="35">
                                             </div>
 
                                             <div style="padding-bottom: 10px">
                                                 <label for="" class="col-md-4" style="padding-top: 10px">
                                                     Name:
                                                 </label>
-                                                <input type="text" name="" id="Add_Name" class="form-control" size="35">
+                                                <input type="text" name="name" id="Add_Name" class="form-control" size="35">
                                             </div>
                                             <div style="padding-bottom: 10px">
                                                 <label for="" class="col-md-4" style="padding-top: 10px">
                                                     Role ID:
                                                 </label>
-                                                <input type="text" name="" id="Add_Role_Id" class="form-control" size="35">
+                                                <input type="text" name="roleId" id="Add_Role_Id" class="form-control" size="35">
                                             </div>
-
-
-
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Ok</button>
+                                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                            </div>
                                         </form>
                                     </div>
 
@@ -341,10 +349,6 @@
                             </div>
 
                             <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary" data-dismiss="modal">Ok</button>
-                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -376,47 +380,46 @@
                             <div class="modal-body">
                                 <div class="row" style="padding-left: 10%">
                                     <div>
-                                        <form action="" class="form-inline " style="background-color: white;">
+                                        <form action="/admin/user-management/update" class="form-inline " style="background-color: white;">
 
 
                                             <div style="padding-bottom: 10px">
                                                 <label for="" class="col-md-4" style="padding-top: 10px">
                                                     Username:
                                                 </label>
-                                                <input type="text" name="" id="Edit_Username" class="form-control" size="35" readonly="">
+                                                <input type="text" name="username" id="Edit_Username" class="form-control" size="35" readonly="">
                                             </div>
 
                                             <div style="padding-bottom: 10px">
                                                 <label for="" class="col-md-4" style="padding-top: 10px">
                                                     Password:
                                                 </label>
-                                                <input type="Password" name="" id="Edit_Password" class="form-control" id="pwd" size="35">
+                                                <input type="Password" name="password" id="Edit_Password" class="form-control" id="pwd" size="35">
                                             </div>
 
                                             <div style="padding-bottom: 10px">
                                                 <label for="" class="col-md-4" style="padding-top: 10px">
                                                     Name:
                                                 </label>
-                                                <input type="text" name="" id="Edit_Name" class="form-control" size="35">
+                                                <input type="text" name="name" id="Edit_Name" class="form-control" size="35">
                                             </div>
                                             <div style="padding-bottom: 10px">
                                                 <label for="" class="col-md-4" style="padding-top: 10px">
                                                     Role ID:
                                                 </label>
-                                                <input type="text" name="" id="Edit_Role_Id" class="form-control" size="35">
+                                                <input type="text" name="roleId" id="Edit_Role_Id" class="form-control" size="35">
                                             </div>
-
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary" >Ok</button>
+                                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                            </div>
                                         </form>
                                     </div>
 
                                 </div>
                             </div>
 
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary" data-dismiss="modal">Ok</button>
-                                <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -610,6 +613,13 @@
 
         },
         'click .remove': function (e, value, row, index) {
+            $.get("/admin/user-management/delete?username="+row.Username,function(data, status){
+                    if(data.data==true){
+                        alert('Delete completed');
+                    }else{
+                        alert('Cannot delete');
+                    }
+                });
             $table.bootstrapTable('remove', {
                 field: 'Username',
                 values: [row.Username]

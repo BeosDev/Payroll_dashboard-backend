@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DashBoard (JobHistory)</title>
+    <link href="/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/css/fresh-bootstrap-table.css" rel="stylesheet" />
+<link href="/dist/css/sb-admin-2.css" rel="stylesheet">
+
+
+
+    <!-- Morris Charts CSS -->
+    <link href="/vendor/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">DASHBOARD</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                
+               
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-flag fa-fw"></i> Notification 1
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-flag fa-fw"></i> Notification 2
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-flag fa-fw"></i> Notification 3
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-flag fa-fw"></i> Notification 4
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-flag fa-fw"></i> Notification 5
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        Đạt đẹp trai vui tính
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search.">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a href="4#">
+                                
+                                    <i class="fa fa-flag fa-fw"></i> Show information
+                                <span class="fa arrow"></span>
+                            </a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="TotalEarning.html">Total earning</a>
+                                </li>
+                                <li>
+                                    <a href="VacationDays.html">Vacation days</a>
+                                </li>
+                                <li>
+                                    <a href="AverageBenefits.html">Average benefits</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Notification<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="HiringAnniversary.html">Hiring anniversary</a>
+                                </li>
+                                <li>
+                                    <a href="AccumulatedVacation.html">Accumulated vacation days</a>
+                                </li>
+                                <li>
+                                    <a href="ChangeBenefits.html">Change benefits</a>
+                                </li>
+                                <li>
+                                    <a href="Birthday.html">Birthday in month</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <!-- ////////////////////////////// -->
+                        <li class = "active">
+                            <a href="#">
+                                <i class="fa fa-table fa-fw">
+                                    
+                                </i> Management
+                                <span class="fa arrow"></span>
+                            </a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="Personal.html">Personal</a>
+                                </li>
+                                <li>
+                                    <a href="Employment.html">Employment</a>
+                                </li>
+                                <li>
+                                    <a href="JobHistory.html" class="active">Job history</a>
+                                </li>
+                                <li>
+                                    <a href="BenefitPlan.html">Benefit plan</a>
+                                </li>
+                                <li>
+                                    <a href="PayRate.html">Pay rate</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+               
+                <!-- /.col-lg-12 -->
+                <div class="wrapper">
+        <div class="fresh-table toolbar-color-azure full-screen-table">
+    <!--    Available colors for the full background: full-color-blue, full-color-azure, full-color-green, full-color-red, full-color-orange                  
+            Available colors only for the toolbar: toolbar-color-blue, toolbar-color-azure, toolbar-color-green, toolbar-color-red, toolbar-color-orange
+        -->
+        
+        <div class="toolbar">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddModal"><i class="fa fa-sign-in-alt"> ADD</i>
+            </div>
+
+
+            <table id="fresh-table" class="table">
+                <thead>
+                    <th data-field="ID" data-sortable="true">ID</th>
+                    <th data-field="Employee_ID" data-sortable="true">Employee ID</th>
+                    <th data-field="Department" data-sortable="true">Department</th>
+                    <th data-field="Division" data-sortable="true">Division</th>
+                    <th data-field="Start_Date" data-sortable="true">Start Date</th>
+                    <th data-field="End_Date" data-sortable="true">End Date</th>
+                    <th data-field="Job_Title" data-sortable="true">Job Title</th>
+                    <th data-field="Supervisor" data-sortable="true">Supervisor</th>
+                    <th data-field="Job_Category" data-sortable="true">Job Category</th>
+                    <th data-field="Location" data-sortable="true">Location</th>
+                    <th data-field="Department_Code" data-sortable="true">Department Code</th>
+                    <th data-field="Salary_Type" data-sortable="true">salary Type</th>
+                    <th data-field="Pay_Period" data-sortable="true">Pay Period</th>
+                    <th data-field="Hours_Per_Week" data-sortable="true">Hours Per Week</th>
+                    <th data-field="Hazadous_Training" data-sortable="true">Hazadous Training</th>
+                    <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th>
+                </thead>
+                <tbody>
+                   <%for(var i=0;i<data.length;i++){%>
+                    <tr>
+                        <td><%=data[i].ID%></td>
+                        <td><%=data[i].Employee_ID%></td>
+                        <td><%=data[i].Department%></td>
+                        <td><%=data[i].Division%></td>
+                        <%var date1=new Date(data[i].Start_Date);%>
+                        <td><%=date1.toLocaleDateString()%></td>
+                        <%var date2=new Date(data[i].End_Date);%>
+                        <td><%=date2.toLocaleDateString()%></td>
+                        <td><%=data[i].Job_Title%></td>
+                        <td><%=data[i].Supervisor%></td>
+                        <td><%=data[i].Job_Category%></td>
+                        <td><%=data[i].Location%></td>
+                        <td><%=data[i].Departmen_Code%></td>
+                        <td><%=data[i].Salary_Type%></td>
+                        <td><%=data[i].Pay_Period%></td>
+                        <td><%=data[i].Hours_per_Week%></td>
+                        <td><%=data[i].Hazardous_Training%></td>
+                        <td></td>
+                    </tr>
+                    <%}%>
+                   
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <!-- Modal Add new-->
+    <div class="modal fade" id="AddModal">
+        <div class="modal-dialog" style="width: 1250px">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <div class = " container-fluid">
+                        <div class =" row">
+
+                            <div class = "col-md-10">
+                                <h4 class="modal-title" style="color: darkblue;">Add new Job History</h4>
+                            </div>
+                            <div class = "col-md-2">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row" style ="padding-left: 2%">
+                        <div>
+                            <form action="/admin/job-history/add" class="form-inline " style="background-color: white;" method="post">                                               
+							
+							<div class = "col-md-6">
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Employee ID:
+                                    </label>                                              
+                                    <input type="text" name="Add_Employee_ID" id="Add_Employee_ID" class="form-control" size="35" required>                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                         Department:
+                                    </label>                                              
+                                    <input type="text" name="Add_Department" id="Add_Department" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Divison:
+                                    </label>                                              
+                                    <input type="text" name="Add_Division" id="Add_Division" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Start Date:
+                                    </label>                                              
+                                    <input type="date" name="Add_Start_Date" id="Add_Start_Date" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        End Date:
+                                    </label>                                              
+                                    <input type="date" name="Add_End_Date" id="Add_End_Date" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Job Title:
+                                    </label>                                              
+                                    <input type="text" name="Add_Job_Title" id="Add_Job_Title" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Supervisor:
+                                    </label>                                              
+                                    <input type="text" name="Add_Supervisor" id="Add_Supervisor" class="form-control" size="35">                                                                                 
+                                </div>   
+							</div>
+                            <div class= "col-md-6">
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Job Category:
+                                    </label>                                              
+                                    <input type="text" name="Add_Job_Category" id="Add_Job_Category" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Location:
+                                    </label>                                              
+                                    <input type="text" name="Add_Location" id="Add_Location" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Department Code:
+                                    </label>                                              
+                                    <input type="text" name="Add_Department_Code" id="Add_Department_Code" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Salary Type
+                                    </label>                                              
+                                    <input type="text" name="Add_Salary_Type" id="Add_Salary_Type" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Pay Period:
+                                    </label>                                              
+                                    <input type="text" name="Add_Pay_Period" id="Add_Pay_Period" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Hours-Per-Week:
+                                    </label>                                              
+                                    <input type="text" name="Add_Hours_Per_Week" id="Add_Hours_Per_Week" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Hazardous Training:
+                                    </label>                                              
+                                    <input type="text" name="Add_Hazardous_Trainning" id="Add_Hazardous_Trainning" class="form-control" size="35">                                                                                 
+                                </div>   
+							</div>
+                                                                    
+                            
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" >Ok</button>
+                    </form>
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                </div>   
+            </div>
+        </div>
+    </div>         
+    <!--/////////////////////////////////////////////////////////////////////////////// -->  
+
+    <!-- Modal Edit--> 
+    <div class="modal fade" id="EditModal">
+        <div class="modal-dialog" style="width: 1250px">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <div class = " container-fluid">
+                        <div class =" row">
+                            
+                            <div class = "col-md-10">
+                                <h4 class="modal-title" style="color: darkblue;">Edit Job History</h4>
+                            </div>
+                            <div class = "col-md-2">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row" style ="padding-left: 2%">                         
+                        <div>
+                            <form action="/admin/job-history/edit" class="form-inline " style="background-color: white;" method="post">                                               
+
+							<div class = "col-md-6">
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        ID:
+                                    </label>                                              
+                                    <input type="text" name="Edit_ID" id="Edit_ID" class="form-control" size="35" readonly>                                                                                 
+                                </div> 
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Employee ID:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Employee_ID" id="Edit_Employee_ID" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                         Department:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Department" id="Edit_Department" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Divison:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Division" id="Edit_Division" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Start Date:
+                                    </label>                                              
+                                    <input type="date" name="Edit_Start_Date" id="Edit_Start_Date" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        End Date:
+                                    </label>                                              
+                                    <input type="date" name="Edit_End_Date" id="Edit_End_Date" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Job Title:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Job_Title" id="Edit_Job_Title" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Supervisor:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Supervisor" id="Edit_Supervisor" class="form-control" size="35">                                                                                 
+                                </div>   
+							</div>
+                            <div class= "col-md-6">
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Job Category:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Job_Category" id="Edit_Job_Category" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Location:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Location" id="Edit_Location" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Department Code:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Department_Code" id="Edit_Department_Code" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Salary Type
+                                    </label>                                              
+                                    <input type="text" name="Edit_Salary_Type" id="Edit_Salary_Type" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Pay Period:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Pay_Period" id="Edit_Pay_Period" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Hours-Per-Week:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Hours_Per_Week" id="Edit_Hours_Per_Week" class="form-control" size="35">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Hazardous Training:
+                                    </label>                                              
+                                    <input type="text" name="Edit_Hazardous_Trainning" id="Edit_Hazardous_Trainning" class="form-control" size="35">                                                                                 
+                                </div>   
+							</div>
+                                                                    
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Ok</button>
+                    </form>
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                </div>   
+            </div>
+        </div>
+    </div>         
+    <!--/////////////////////////////////////////////////////////////////////////////// -->  
+    
+    <!-- Modal Detail--> <!-- cung dien data vao text luon disable ca roi-->
+    <div class="modal fade" id="DetailModal">
+        <div class="modal-dialog" style="width: 1250px">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <div class = " container-fluid">
+                        <div class =" row">
+
+                            <div class = "col-md-10">
+                                <h4 class="modal-title" style="color: darkblue;">Detail person</h4>
+                            </div>
+                            <div class = "col-md-2">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row" style ="padding-left: 2%">                         
+                        <div>
+                            <form action="" class="form-inline " style="background-color: white;">                                               
+
+							<div class="col-md-6">
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        ID:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_ID" class="form-control" size="35" disabled="">                                                                                 
+                                </div> 
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Employee ID:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Employee_ID" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                         Department:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Department" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Divison:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Division" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Start Date:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Start_Date" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        End Date:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_End_Date" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Job Title:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Job_Title" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Supervisor:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Supervisor" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+							</div>
+                            <div class= "col-md-6">
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Job Category:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Job_Category" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Location:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Location" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Department Code:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Department_Code" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Salary Type
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Salary_Type" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Pay Period:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Pay_Period" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Hours-Per-Week:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Hours_Per_Week" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Hazardous Training:
+                                    </label>                                              
+                                    <input type="text" name="" id="Detail_Hazardous_Trainning" class="form-control" size="35" disabled="">                                                                                 
+                                </div>   
+							</div>
+                                               	                     
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                   
+                </div>   
+            </div>
+        </div>
+    </div>         
+    <!--/////////////////////////////////////////////////////////////////////////////// -->     
+            </div>
+            <!-- /.row -->
+            
+            
+
+                
+            
+
+            
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+  <script src="/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="/vendor/raphael/raphael.min.js"></script>
+    <script src="/vendor/morrisjs/morris.min.js"></script>
+    <script src="/data/morris-data.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/dist/js/sb-admin-2.js"></script>  
+
+</body>
+
+
+
+<script type="text/javascript" src="/assets/js/bootstrap-table.js"></script>
+
+
+
+<script type="text/javascript">
+    var $table = $('#fresh-table'),
+    $alertBtn = $('#alertBtn'), 
+    full_screen = false,
+    window_height;
+
+    $().ready(function(){
+
+        window_height = $(window).height();
+        table_height = window_height - 20;
+
+
+        $table.bootstrapTable({
+            toolbar: ".toolbar",
+
+            showRefresh: true,
+            search: true,
+            showToggle: true,
+            showColumns: true,
+            pagination: true,
+            striped: true,
+            sortable: true,
+            height: table_height,
+            pageSize: 25,
+            pageList: [25,50,100],
+
+            formatShowingRows: function(pageFrom, pageTo, totalRows){
+                    //do nothing here, we don't want to show the text "showing x of y from." 
+                },
+                formatRecordsPerPage: function(pageNumber){
+                    return pageNumber + " rows visible";
+                },
+                icons: {
+                    refresh: 'fa fa-refresh',
+                    toggle: 'fa fa-th-list',
+                    columns: 'fa fa-columns',
+                    detailOpen: 'fa fa-plus-circle',
+                    detailClose: 'fa fa-minus-circle'
+                }
+            });
+
+        
+
+        $(window).resize(function () {
+            $table.bootstrapTable('resetView');
+        });    
+    });
+
+
+    function operateFormatter(value, row, index) {
+        return [
+        '<a rel="tooltip" title="Detail" class="table-action detail" data-toggle="modal" data-target="#DetailModal" title="Detail">',
+        '<i class="fas fa-eye"></i>',
+        '</a>',
+
+        '<a rel="tooltip" title="Edit" class="table-action edit" data-toggle="modal" data-target="#EditModal" title="Edit">',
+        '<i class="fa fa-edit"></i>',
+        '</a>',
+
+        '<a rel="tooltip" title="Remove" class="table-action remove" title="Remove">',
+        '<i class="fa fa-remove"></i>',
+        '</a>'
+        ].join('');
+    }
+
+    window.operateEvents = {
+            'click .detail': function (e, value, row, index) {
+                document.getElementById("Detail_ID").value= row.ID;
+                document.getElementById("Detail_Employee_ID").value= row.Employee_ID;
+                document.getElementById("Detail_Department").value= row.Department;
+                document.getElementById("Detail_Division").value= row.Division;
+                document.getElementById("Detail_Start_Date").value= row.Start_Date;
+                document.getElementById("Detail_End_Date").value= row.End_Date;
+                document.getElementById("Detail_Job_Title").value= row.Job_Title;
+                document.getElementById("Detail_Supervisor").value= row.Supervisor;
+                document.getElementById("Detail_Job_Category").value= row.Job_Category;
+                document.getElementById("Detail_Location").value= row.Location;
+                document.getElementById("Detail_Department_Code").value= row.Department_Code;
+                document.getElementById("Detail_Salary_Type").value= row.Salary_Type;
+                document.getElementById("Detail_Pay_Period").value= row.Pay_Period;
+                document.getElementById("Detail_Hours_Per_Week").value= row.Hours_Per_Week;
+                document.getElementById("Detail_Hazardous_Trainning").value= row.Hazadous_Training;
+
+            },
+            'click .edit': function (e, value, row, index) {
+                document.getElementById("Edit_ID").value= row.ID;
+                document.getElementById("Edit_Employee_ID").value= row.Employee_ID;
+                document.getElementById("Edit_Department").value= row.Department;
+                document.getElementById("Edit_Division").value= row.Division;
+                document.getElementById("Edit_Start_Date").value= row.Start_Date;
+                document.getElementById("Edit_End_Date").value= row.End_Date;
+                document.getElementById("Edit_Job_Title").value= row.Job_Title;
+                document.getElementById("Edit_Supervisor").value= row.Supervisor;
+                document.getElementById("Edit_Job_Category").value= row.Job_Category;
+                document.getElementById("Edit_Location").value= row.Location;
+                document.getElementById("Edit_Department_Code").value= row.Department_Code;
+                document.getElementById("Edit_Salary_Type").value= row.Salary_Type;
+                document.getElementById("Edit_Pay_Period").value= row.Pay_Period;
+                document.getElementById("Edit_Hours_Per_Week").value= row.Hours_Per_Week;
+                document.getElementById("Edit_Hazardous_Trainning").value= row.Hazadous_Training;
+                
+
+            },
+            'click .remove': function (e, value, row, index) {  // delete củ l lắm lúc chạy lúc k
+                $.get("/admin/job-history/delete/"+row.ID,function(data, status){
+                    if(data.data=='true'){
+                        alert('delete completed');
+                    }else{
+                        alert('cannot delete');
+                    }
+                });
+                $table.bootstrapTable('remove', {
+                    field: 'ID',
+                    values: [row.ID]
+                });
+
+            }
+        };
+
+</script>
+
+</html>

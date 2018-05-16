@@ -12,7 +12,6 @@ function createConnection(db) {
 }
 
 function executeQuery(cmd, paramters) {
-  con.connect();
   var emitter = this;
   con.query(cmd, paramters, function (err, results) {
     if (err) {
@@ -21,7 +20,6 @@ function executeQuery(cmd, paramters) {
     }
     emitter.emit('results', results);
   });
-  con.end();
 }
 executeQuery.prototype = new EventEmitter();
 

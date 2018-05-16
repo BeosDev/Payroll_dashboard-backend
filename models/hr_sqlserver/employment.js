@@ -10,7 +10,7 @@ function getEmployments(){
     return new conn.executeQuery(query);
 }
 
-function getEmployment(id){
+function getOneEmployment(id){
     var query = {
         type: 'select',
         table: 'Employment',
@@ -52,7 +52,7 @@ function deleteEmployment(id){
 
 module.exports = {
     getEmployments,
-    getEmployment,
+    getOneEmployment,
     updateEmployment,
     deleteEmployment,
     addEmployment

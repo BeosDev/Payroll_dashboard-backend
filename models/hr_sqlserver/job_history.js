@@ -11,14 +11,14 @@ function getJobHistory() {
     return new conn.executeQuery(query);
 }
 
-function addJobHistory(paramters) {
+function addJobHistory(paramters,fn) {
     var query = {
         type: 'insert',
         table: 'Job_History',
         parameter: paramters,
-        whereParameter: {},
+        whereParameter:{},
     }
-    return new conn.executeQuery(query, paramters);
+    return new conn.executeQuery(query,paramters);
 }
 
 function updateJobHistory(paramters, id) {
@@ -28,6 +28,7 @@ function updateJobHistory(paramters, id) {
         parameter: paramters,
         whereParameter: {'ID': id},
     }
+    console.log(query);
     return new conn.executeQuery(query, paramters);
 }
 
@@ -41,7 +42,7 @@ function deleteJobHistory(id) {
     }
     return new conn.executeQuery(query);
 }
-
+//updateJobHistory({'Job_Title':'update'},58);
 module.exports = {
     getJobHistory,
     updateJobHistory,

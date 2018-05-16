@@ -11,7 +11,7 @@ function getPersons() {
     return new conn.executeQuery(query);
 }
 
-function getPerson(id) {
+function getOnePerson(id) {
     var query = {
         type: 'select',
         table: 'Personal',
@@ -52,12 +52,21 @@ function deletePerson(id) {
     return new conn.executeQuery(query);
 }
 
+
+function getTotalEarningPerson()
+{
+    var query = 'select Personal.Employee_ID,Personal.Gender,Personal.Shareholder_Status,Personal.Ethnicity,Employment.Employment_Status,Job_History.Department'
+                +' from Employment inner join Personal on Employment.Employee_ID = Personal.Employee_ID'
+                +' inner join Job_History on Personal.Employee_ID = Job_History.Employee_ID';
+    return new conn.executeQuery(query);
+}
 module.exports = {
     getPersons,
     updatePerson,
     deletePerson,
     addPerson,
-    getOnePerson
+    getOnePerson,
+    getTotalEarningPerson
 }
 //deletePersonal(2)
 /*

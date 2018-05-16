@@ -14,12 +14,12 @@ conn.createConnection('mydb');
 */
 
 function getEmployees(){
-    var query = "select * from `employee`"
+    var query = "select * from `employee` ;"
     return new conn.executeQuery(query);
 }
 
-function getEmployeeByIdEmployee(id){
-    var query = 'select * from `employee` where `idEmployee` = '+ `${id}`;
+function getOneEmployee(id){
+    var query = 'select * from `employee` where  `idEmployee` = '+ `${id}`;
     return new conn.executeQuery(query);
 }
 

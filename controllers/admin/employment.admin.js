@@ -71,6 +71,8 @@ function getEmployment(req, res) {
         //   console.log(dataMySql);
         var emMYSQL = new employMYSQL.addEmployee(dataMySql);
         var emMSSQL = new employMSSQL.addEmployment(dataMssql);
+        emMSSQL.once('error',err => console.log(err));
+        emMYSQL.once('error',err => console.log(err));
         res.redirect('/admin/employment');
     }
 

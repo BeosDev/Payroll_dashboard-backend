@@ -50,7 +50,7 @@ function deleteEmployee(id){
 // k.once('results',r => console.log(r));
 // k.once('error',err => console.log(err));
 function getAlertDayOff(){
-    var query = 'SELECT `Vacation Days` as vacation_date,`Last Name` as last_name,`First Name` as first_name ,`Employee Number` as employee_number from employee';
+    var query = 'SELECT `Vacation Days` as vacation_date,`Last Name` as last_name,`First Name` as first_name ,`Employee Number` as employee_number from employee WHERE `Vacation Days`>25';
     return new conn.executeQuery(query);
 }
 

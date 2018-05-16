@@ -6,10 +6,34 @@ function getEmployment(req, res) {
     emMSSQL.once('results', function (dataMSSQL) {
         var emMYSQL = employMYSQL.getEmployees();
         emMYSQL.once('results', function (dataMYSQL) {
+            var data = [];
+            for (var i = 0; i < dataMSSQL.length; i++) {
+                var dataRaw = {
+                    Employee_ID: dataMYSQL[i]['Employee_ID'],
+                    Employee_Number: dataMYSQL[i]['Employee Number'],
+                    First_Name: dataMYSQL[i]['First Name'],
+                    Last_Name: dataMYSQL[i]['Last Name'],
+                    SSN: dataMYSQL[i]['SSN'],
+                    Pay_Rate: dataMYSQL[i]['Pay Rate'],
+                    Payrate_ID: dataMYSQL[i]['Pay Rates_idPay Rates'],
+                    Vacation_Date: dataMYSQL[i]['Vacation Days'],
+                    Paid_To_Date: dataMYSQL[i]['Paid To Date'],
+                    Paid_Last_Year: dataMYSQL[i]['Paid Last Year'],
+                    Employment_Status: dataMSSQL[i]['Employment_Status'],
+                    Hire_Date: dataMSSQL[i]['Hire_Date'],
+                    Workers_Comp_Code: dataMSSQL[i]['Workers_Comp_Code'],
+                    Termination_Date: dataMSSQL[i]['Termination_Date'],
+                    Rehire_Date: dataMSSQL[i]['Rehire_Date'],
+                    Last_Review_Date: dataMSSQL[i]['Last_Review_Date']
+                }
+                data.push(dataRaw);
+            }
             console.log('ok');
             console.log(dataMSSQL);
             console.log(dataMYSQL);
-            res.end('done');
+            res.render('/admin/Employment', {
+                data: data
+            });
         })
     })
 }
@@ -43,7 +67,7 @@ function addEmployment(req, res) {
     for (var key in dataMssql)
         if (dataMssql.hasOwnProperty(key))
             dataMssql[key] = req.body[key];
- //   console.log(dataMySql);
+    //   console.log(dataMySql);
     var emMYSQL = new employMYSQL.addEmployee(dataMySql);
     var emMSSQL = new employMSSQL.addEmployment(dataMssql);
     res.end('done');
@@ -78,9 +102,9 @@ function updateEmployment(req, res) {
     for (var key in dataMssql)
         if (dataMssql.hasOwnProperty(key))
             dataMssql[key] = req.body[key];
- //   console.log(dataMySql);
-    var emMYSQL = new employMYSQL.updateEmployee(dataMySql,dataMySql.idEmployee);
-    var emMSSQL = new employMSSQL.updateEmployment(dataMssql,dataMssql.Employee_ID);
+    //   console.log(dataMySql);
+    var emMYSQL = new employMYSQL.updateEmployee(dataMySql, dataMySql.idEmployee);
+    var emMSSQL = new employMSSQL.updateEmployment(dataMssql, dataMssql.Employee_ID);
     res.end('done');
 }
 

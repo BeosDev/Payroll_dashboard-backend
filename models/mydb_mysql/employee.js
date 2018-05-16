@@ -38,10 +38,16 @@ function deleteEmployee(id){
     return new conn.executeQuery(query);
 }
 
+function getAlertDayOff(){
+    var query = 'SELECT `Vacation Days` as vacation_date,`Last Name` as last_name,`First Name` as first_name ,`Employee Number` as employee_number from employee';
+    return new conn.executeQuery(query);
+}
+
 module.exports = {
     getEmployees,
     addEmployee,
     updateEmployee,
     deleteEmployee,
-    getOneEmployee
+    getOneEmployee,
+    getAlertDayOff
 }

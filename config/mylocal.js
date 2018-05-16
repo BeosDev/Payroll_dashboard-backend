@@ -4,7 +4,7 @@ var con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'root',
-    database: 'mydb'
+    database: 'muser'
 });
 
 function executeQuery(cmd, paramters) {

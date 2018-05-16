@@ -1,7 +1,5 @@
 var bcrypt = require('bcrypt-nodejs');
-var conn = require('../config/mysql');
-conn.createConnection('muser');
-
+var conn = require('../config/mylocal');
 function getUsers() {
     var query = 'SELECT * FROM user';
     return new conn.executeQuery(query);

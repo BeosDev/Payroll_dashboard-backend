@@ -1,5 +1,4 @@
 var conn = require('../../config/mysql');
-conn.createConnection('mydb');
 
 function getPayRates() {
     var query = 'Select `idPay Rates` as idPay_Rates,`Pay Rate Name` as Pay_Rate_Name,Value,`Tax Percentage` as Tax_Percentage,`Pay Type` as Pay_Type, `Pay Amount` as Pay_Amount, `PT - Level C` as PT_Level from `pay rates`';

@@ -16,10 +16,11 @@ module.exports = function () {
         usernameField: 'username',
         passwordField: 'password',
     }, function (username, password, done) {
+        console.log('ok');
         var User = new UserModel.getOneUser(username);
-        User.once('result', function (result) {
+        User.once('results', function (result) {
             console.log(result.length);
-            if (result.length !== 0 && UserModel.validPassword(password, result[0].password))
+            if (password == result[0].password)
                 return done(null, result[0]);
             return done(null, false);
         })

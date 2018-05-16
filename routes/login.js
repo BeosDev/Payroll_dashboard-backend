@@ -5,9 +5,8 @@ router.get('/', function (req, res, next) {
 })
 
 router.post('/', passport.authenticate('local-login', {
+    successRedirect: '/admin',
     failureRedirect: '/login',
-}), function (req, res, next) {
-    res.end('ok');
-})
+}))
 
 module.exports = router;

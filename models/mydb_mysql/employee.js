@@ -1,6 +1,4 @@
 var conn = require("../../config/mysql")
-conn.createConnection('mydb');
-
 /*
 `idEmployee` int(11) NOT NULL,
   `Employee Number` int(10) unsigned NOT NULL,

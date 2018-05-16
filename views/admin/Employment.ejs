@@ -259,7 +259,7 @@
                     <th data-field="actions" data-formatter="operateFormatter" data-events="operateEvents">Actions</th>
                 </thead>
                 <tbody>
-                    <!-- <%for(var i=0;i<data.length;i++){%>
+                    <%for(var i=0;i<data.length;i++){%>
                         <tr>
                             <td><%=data[i].Employee_ID%></td>
                             <td><%=data[i].Employee_Number%></td>
@@ -270,35 +270,21 @@
                             <td><%=data[i].Payrate_ID%></td>
                             <td><%=data[i].Vacation_Date%></td>
                             <td><%=data[i].Paid_To_Date%></td>
+                            <td><%=data[i].Paid_Last_Year%></td>
                             <td><%=data[i].Employment_Status%></td>
-                            <td><%=data[i].Hire_Date%></td>
+                            <%var date1=new Date(data[i].Hire_Date);%>
+                            <td><%=date1.toLocaleDateString()%></td>
                             <td><%=data[i].Workers_Comp_Code%></td>
-                            <td><%=data[i].Termination_Date%></td>
-                            <td><%=data[i].Rehire_Date%></td>
-                            <td><%=data[i].Last_Review_Date%></td>
+                            <%var date2=new Date(data[i].Termination_Date);%>
+                            <td><%=date2.toLocaleDateString()%></td>
+                            <%var date3=new Date(data[i].Rehire_Date);%>
+                            <td><%=date3.toLocaleDateString()%></td>
+                            <%var date4=new Date(data[i].Last_Review_Date);%>
+                            <td><%=date3.toLocaleDateString()%></td>
                             <td></td>
                         </tr>
-                        <%}%> -->
+                        <%}%>
 
-                    <tr>
-                       <td>2</td>
-                        <td>2</td>
-                        <td>vim</td>
-                        <td>ngoen</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>03/03/2018</td>
-                        <td>03/03/2018</td>
-                        <td>03/03/2018</td>
-                        <td>03/03/2018</td>
-                        <td> alt3 </td>
-                        <td>03/03/2018</td>
-                        <td>12345654</td>
-                        <td>03/03/2018</td>
-                        <td>03/03/2018</td>
-                        <td>03/03/2018</td>
-                        <td></td>
-                    </tr>
 
                 </tbody>
             </table>
@@ -332,37 +318,42 @@
                 <div class="modal-body">
                     <div class="row" style ="padding-left: 2%">                         
                         <div>
-                            <form action="" class="form-inline " style="background-color: white;">                                               
+                            <form action="" method="POST" class="form-inline " style="background-color: white;">                                               
                             
                             <div class = "col-md-6">
-                                
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Employee ID:
+                                    </label>                                              
+                                    <input type="text" name="idEmployee" id="Add_Employee_Number" class="form-control" size="35">                                                                                 
+                                </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Employee Number:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Employee_Number" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Employee Number" id="Add_Employee_Number" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                          Last Name:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Last_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Last Name" id="Add_Last_Name" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         First Name:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_First_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="First Name" id="Add_First_Name" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         SSN:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_SSN" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="SSN" id="Add_SSN" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 
@@ -371,28 +362,28 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         PayRate:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Payrate" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Pay Rate" id="Add_Payrate" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         PayRate ID:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Payrate_ID" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Pay Rates_idPay Rates" id="Add_Payrate_ID" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Vacation Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Vacation_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Vacation Days" id="Add_Vacation_Date" class="form-control" size="35">                                                                                 
                                 </div>   
                             
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Paid To Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Paid_To_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Paid To Date" id="Add_Paid_To_Date" class="form-control" size="35">                                                                                 
                                 </div>   
                             </div>
                             <div class= "col-md-6">
@@ -400,49 +391,53 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Paid Last Year:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Paid_Last_Year" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Paid Last Year" id="Add_Paid_Last_Year" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Employment Status:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Employment_Status" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Employment_Status" id="Add_Employment_Status" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Hire Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Hire_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Hire_Date" id="Add_Hire_Date" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Workers Comp Code:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Workers_Comp_Code" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Workers_Comp_Code" id="Add_Workers_Comp_Code" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Termination Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Termination_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Termination_Date" id="Add_Termination_Date" class="form-control" size="35">                                                                                 
                                 </div> 
 
                                  <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Rehire Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Rehire_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Rehire_Date" id="Add_Rehire_Date" class="form-control" size="35">                                                                                 
                                 </div>    
                                  <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Last Review Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Last_Review_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Last_Review_Date" id="Add_Last_Review_Date" class="form-control" size="35">                                                                                 
                                 </div>  
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                </div>   
                             </div>                                
                             </form>
                         </div>
@@ -450,11 +445,7 @@
                     </div>
                 </div>
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
-                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                </div>   
+             
             </div>
         </div>
     </div>         
@@ -485,42 +476,41 @@
                 <div class="modal-body">
                     <div class="row" style ="padding-left: 2%">                         
                         <div>
-                            <form action="" class="form-inline " style="background-color: white;">                                               
-
+                            <form action="/admin/employment/update" method="POST" class="form-inline " style="background-color: white;">                                               
                             <div class = "col-md-6">
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Employee ID:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Employee_ID" class="form-control" size="35" disabled="">                                                                                 
+                                    <input type="text" name="idEmployee" id="Edit_Employee_ID" class="form-control" size="35">                                                                                 
                                 </div> 
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Employee Number:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Employee_Number" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Employee Number" id="Edit_Employee_Number" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                          Last Name:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Last_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Last Name" id="Edit_Last_Name" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         First Name:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_First_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="First Name" id="Edit_First_Name" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         SSN:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_SSN" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="SSN" id="Edit_SSN" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 
@@ -529,21 +519,21 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         PayRate:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Payrate" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Pay Rate" id="Edit_Payrate" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         PayRate ID:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Payrate_ID" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Pay Rates_idPay Rates" id="Edit_Payrate_ID" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Vacation Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Vacation_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Vacation Days" id="Edit_Vacation_Date" class="form-control" size="35">                                                                                 
                                 </div>   
                             </div>
                             <div class= "col-md-6">
@@ -551,56 +541,60 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Paid To Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Paid_To_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Paid To Date" id="Edit_Paid_To_Date" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Paid Last Year:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Paid_Last_Year" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Paid Last Year" id="Edit_Paid_Last_Year" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Employment Status:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Employment_Status" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Employment_Status" id="Edit_Employment_Status" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Hire Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Hire_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Hire_Date" id="Edit_Hire_Date" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Workers Comp Code:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Workers_Comp_Code" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Workers_Comp_Code" id="Edit_Workers_Comp_Code" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Termination Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Termination_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Termination_Date" id="Edit_Termination_Date" class="form-control" size="35">                                                                                 
                                 </div> 
 
                                  <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Rehire Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Rehire_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Rehire_Date" id="Edit_Rehire_Date" class="form-control" size="35">                                                                                 
                                 </div>    
                                  <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Last Review Date:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Last_Review_Date" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Last_Review_Date" id="Edit_Last_Review_Date" class="form-control" size="35">                                                                                 
                                 </div>  
+                                <div class="modal-footer">
+                                    <button type="submit" class="btn btn-primary" >Ok</button>
+                                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                </div>   
                             </div>                                           
                             </form>
                         </div>
@@ -609,10 +603,7 @@
                 </div>
                 
                 <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
-                    <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                </div>   
+                
             </div>
         </div>
     </div>         
@@ -913,6 +904,13 @@
 
             },
             'click .remove': function (e, value, row, index) {  
+                $.get("/admin/employment/delete?id="+row.Employee_ID,function(data, status){
+                    if(data.data==true){
+                        alert('delete completed');
+                    }else{
+                        alert('cannot delete');
+                    }
+                });
                 $table.bootstrapTable('remove', {
                     field: 'Employee_ID',
                     values: [row.Employee_ID]

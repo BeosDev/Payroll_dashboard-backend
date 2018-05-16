@@ -21,12 +21,13 @@ function addUser(paramters) {
 }
 
 function deleteUser(username){
-    var query = `DELETE FROM user WHERE username = ${username}`;
+    var query = `DELETE FROM user WHERE username = '${username}'`;
     return new conn.executeQuery(query);
 }
 
 function updateUser(paramters, username) {
-    var query = 'UPDATE `user` SET ? WHERE `username` = ' + `${username};`;
+    var query = 'UPDATE `user` SET ? WHERE `username` = ' + `'${username}';`;
+    console.log(query);
     return new conn.executeQuery(query, paramters);
 }
 

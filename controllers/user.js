@@ -4,6 +4,7 @@ function getUsers(req,res){
     var user = new UserModel.getUserAndRole();
     user.once('results',function(results){
         if (results.length > 0){
+            console.log(results);
             res.render('admin/userManager',{data:results});
         }
         else
@@ -27,7 +28,7 @@ function addUser(req,res){
 function updateUser(req,res){
     var user = new UserModel.updateUser(req.body,req.body.username);
     user.once('results',function(results){
-        res.redirect('/');
+        res.redirect('/admin/user-management');
     })
     user.once('error',function(err){
         res.redirect('/admin/user-management');

@@ -189,7 +189,7 @@
                             <div class="modal-body">
                                 <div class="row" style="padding-left: 10%">
                                     <div>
-                                        <form action="/admin/user-management/update" class="form-inline " style="background-color: white;">
+                                        <form action="/admin/user-management/update" class="form-inline " style="background-color: white;" method="post">
 
 
                                             <div style="padding-bottom: 10px">
@@ -415,14 +415,19 @@
 
         },
         'click .edit': function (e, value, row, index) {
-            document.getElementById("Edit_Username").value = row.Username;
-            document.getElementById("Edit_Password").value = row.Password;
-            document.getElementById("Edit_Name").value = row.Name;
-            document.getElementById("Edit_Role_Id").value = row.Role_Id;
+            document.getElementById("Edit_Username").value = row.Username.trim();
+            document.getElementById("Edit_Password").value = row.Password.trim();
+            document.getElementById("Edit_Name").value = row.Name.trim();
+            if(row.Role_Id.trim()=='admin'){
+                document.getElementById("Edit_Role_Id").value = '0';
+            }
+            else{
+                document.getElementById("Edit_Role_Id").value = '1';
+            }
 
         },
         'click .remove': function (e, value, row, index) {
-            $.get("/admin/user-management/delete?username="+row.Username,function(data, status){
+            $.get("/admin/user-management/delete?username="+row.Username.trim(),function(data, status){
                     if(data.data==true){
                         alert('Delete completed');
                     }else{

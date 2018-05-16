@@ -50,6 +50,7 @@ function deleteEmployment(id){
     return new conn.executeQuery(query);
 }
 
+
 module.exports = {
     getEmployments,
     getOneEmployment,

@@ -2,40 +2,39 @@ var employMSSQL = require('../../models/hr_sqlserver/employment');
 var employMYSQL = require('../../models/mydb_mysql/employee');
 
 function getEmployment(req, res) {
-    var emMSSQL = new employMSSQL.getEmployments();
-    emMSSQL.once('results', function (dataMSSQL) {
-        var emMYSQL = employMYSQL.getEmployees();
-        emMYSQL.once('results', function (dataMYSQL) {
-            var data = [];
-            for (var i = 0; i < dataMSSQL.length; i++) {
-                var dataRaw = {
-                    Employee_ID: dataMYSQL[i]['Employee_ID'],
-                    Employee_Number: dataMYSQL[i]['Employee Number'],
-                    First_Name: dataMYSQL[i]['First Name'],
-                    Last_Name: dataMYSQL[i]['Last Name'],
-                    SSN: dataMYSQL[i]['SSN'],
-                    Pay_Rate: dataMYSQL[i]['Pay Rate'],
-                    Payrate_ID: dataMYSQL[i]['Pay Rates_idPay Rates'],
-                    Vacation_Date: dataMYSQL[i]['Vacation Days'],
-                    Paid_To_Date: dataMYSQL[i]['Paid To Date'],
-                    Paid_Last_Year: dataMYSQL[i]['Paid Last Year'],
-                    Employment_Status: dataMSSQL[i]['Employment_Status'],
-                    Hire_Date: dataMSSQL[i]['Hire_Date'],
-                    Workers_Comp_Code: dataMSSQL[i]['Workers_Comp_Code'],
-                    Termination_Date: dataMSSQL[i]['Termination_Date'],
-                    Rehire_Date: dataMSSQL[i]['Rehire_Date'],
-                    Last_Review_Date: dataMSSQL[i]['Last_Review_Date']
-                }
-                data.push(dataRaw);
-            }
-            console.log('ok');
-            console.log(dataMSSQL);
-            console.log(dataMYSQL);
-            res.render('/admin/Employment', {
-                data: data
-            });
-        })
-    })
+    res.render('/admin/Employment');
+    // var emMSSQL = new employMSSQL.getEmployments();
+    // emMSSQL.once('results', function (dataMSSQL) {
+    //     var emMYSQL = employMYSQL.getEmployees();
+    //     emMYSQL.once('results', function (dataMYSQL) {
+    //         var data = [];
+    //         console.log(dataMSSQL.recordset.length);
+    //         dataMSSQL = dataMSSQL.recordset;
+    //         for (var i = 0; i < dataMSSQL.length; i++) {
+    //             var dataRaw = {
+    //                 Employee_ID: dataMYSQL[i]['Employee_ID'],
+    //                 Employee_Number: dataMYSQL[i]['Employee Number'],
+    //                 First_Name: dataMYSQL[i]['First Name'],
+    //                 Last_Name: dataMYSQL[i]['Last Name'],
+    //                 SSN: dataMYSQL[i]['SSN'],
+    //                 Pay_Rate: dataMYSQL[i]['Pay Rate'],
+    //                 Payrate_ID: dataMYSQL[i]['Pay Rates_idPay Rates'],
+    //                 Vacation_Date: dataMYSQL[i]['Vacation Days'],
+    //                 Paid_To_Date: dataMYSQL[i]['Paid To Date'],
+    //                 Paid_Last_Year: dataMYSQL[i]['Paid Last Year'],
+    //                 Employment_Status: dataMSSQL[i]['Employment_Status'],
+    //                 Hire_Date: dataMSSQL[i]['Hire_Date'],
+    //                 Workers_Comp_Code: dataMSSQL[i]['Workers_Comp_Code'],
+    //                 Termination_Date: dataMSSQL[i]['Termination_Date'],
+    //                 Rehire_Date: dataMSSQL[i]['Rehire_Date'],
+    //                 Last_Review_Date: dataMSSQL[i]['Last_Review_Date']
+    //             }
+    //             data.push(dataRaw);
+    //         }
+    //         console.log(data);
+            
+    //     })
+    // })
 }
 
 function addEmployment(req, res) {

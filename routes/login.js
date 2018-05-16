@@ -5,7 +5,7 @@ router.get('/', function (req, res, next) {
 })
 
 router.post('/', passport.authenticate('local-login', {
-    successRedirect: '/admin',
+    successRedirect: '/total-earning',
     failureRedirect: '/login',
 }))
 

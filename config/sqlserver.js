@@ -5,8 +5,8 @@ var knex = require('knex')({
 })
 const config = {
     user: 'sa',
-    password: '123456',
-    server: 'localhost',
+    password: 'chuot123',
+    server: 'HELLOWORLD\\SQLEXPRESS',
     database: 'HR'
 }
 /*

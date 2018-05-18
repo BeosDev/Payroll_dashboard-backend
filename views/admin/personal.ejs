@@ -275,13 +275,13 @@
                         <td><%=data[i].Phone_Number%></td>
                         <td><%=data[i].Social_Security_Number%></td>
                         <td><%=data[i].Drivers_License%></td>
-                        <td><%=data[i].Marital_Status?'Marriaged':'Single'%></td>
+                        <td><%=data[i].Marital_Status%></td>
                         <td><%=data[i].Gender?'Male':'Female'%></td>
-                        <td><input type="checkbox" name="" id="" checked="<%=data[i].Shareholder_Status%>"></td>
+                        <td><%=data[i].Shareholder_Status?'Yes':'No'%></td>
                         <td>
                             <%for(var j = 0; j < data1.length; j++){%>
-                                <%if(data[i].Benefit_Plans == data1[j].Benefit_Plan_ID){%>
-                                    <%=data[j].Plan_Name%>
+                                <%if(data[i].Benefit_Plans.toString().localeCompare(data1[j].Benefit_Plan_ID.toString())==0){%>
+                                    <%=data1[j].Plan_Name%>
                                 <%}%>
                             <%}%>
                         </td>
@@ -299,7 +299,7 @@
     <!-- Modal Add new-->
     <div class="modal fade" id="AddModal">
         <div class="modal-dialog " style ="width: 1250px">
-            <form action="/admin/personal/add" class="form-inline" style="background-color: white;">
+            <form action="/admin/personal/add" class="form-inline" style="background-color: white;" method="POST">
             <div class="modal-content">
 
                 <!-- Modal Header -->
@@ -325,68 +325,73 @@
                                                                            
 
 							<div class = "col-md-6">
-                                
+                                <div style="padding-bottom: 10px">                                           
+                                    <label for="" class = "col-md-4" style="padding-top: 10px">
+                                        Employee ID:
+                                    </label>                                              
+                                    <input type="text" name="Add_Employee_ID" id="Add_Employee_ID" class="form-control" size="35">                                                                                 
+                                </div> 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         First name:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_First_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_First_Name" id="Add_First_Name" class="form-control" size="35">                                                                                 
                                 </div> 
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Last name:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Last_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Last_Name" id="Add_Last_Name" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Middle initial:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Middle_Initial" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Middle_Initial" id="Add_Middle_Initial" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Address 1:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Address1" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Address1" id="Add_Address1" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Address 2:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Address2" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Address2" id="Add_Address2" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         City:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_City" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_City" id="Add_City" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         State:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_State" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_State" id="Add_State" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Zip:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Zip" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Zip" id="Add_Zip" class="form-control" size="35">                                                                                 
                                 </div>   
                             
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Email:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Email" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Email" id="Add_Email" class="form-control" size="35">                                                                                 
                                 </div>   
                             </div>
                             <div class= "col-md-6">
@@ -394,29 +399,28 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Phone number:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Phone_Number" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Phone_Number" id="Add_Phone_Number" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Social security number:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Social_Security_Number" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Social_Security_Number" id="Add_Social_Security_Number" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Drivers license
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Drivers_License" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Drivers_License" id="Add_Drivers_License" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Marital status:
                                     </label>                                              
-                                    <input type="radio" name="Add_Marital_Status" id="Add_Marital_Status" class="form-control">Single
-                                    <input type="radio" name="Add_Marital_Status" id="Add_Marital_Status" class="form-control">Marriaged                                                                        
+                                    <input type="text" name="Add_Marital_Status" id="Add_Marital_Status" class="form-control" size="35">
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
@@ -438,7 +442,7 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Benefit plan:
                                     </label>
-                                    <select name="" id="Add_Benefit_Plan" class="form-control">
+                                    <select name="Add_Benefit_Plans" id="Add_Benefit_Plan" class="form-control">
                                         <%for(var i = 0; i < data1.length; i++){%>
                                             <option value="<%=data1[i].Benefit_Plan_ID%>"><%=data1[i].Plan_Name%></option>
                                         <%}%>
@@ -449,7 +453,7 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Ethnicity:
                                     </label>                                              
-                                    <input type="text" name="" id="Add_Ethnicity" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Add_Ethnicity" id="Add_Ethnicity" class="form-control" size="35">                                                                                 
                                 </div>     
                                 </div>                                        
                            

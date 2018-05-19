@@ -42,7 +42,6 @@ function updatePerson(paramters, id) {
 }
 
 function deletePerson(id) {
-    var query = 'DELETE FROM Personals WHERE Employee_ID = ' + `${id};`;
     var query = {
         type: 'delete',
         table: 'Personal',

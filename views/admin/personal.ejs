@@ -384,14 +384,14 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Zip:
                                     </label>                                              
-                                    <input type="text" name="Add_Zip" id="Add_Zip" class="form-control" size="35">                                                                                 
+                                    <input type="number" name="Add_Zip" id="Add_Zip" class="form-control" size="35">                                                                                 
                                 </div>   
                             
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Email:
                                     </label>                                              
-                                    <input type="text" name="Add_Email" id="Add_Email" class="form-control" size="35">                                                                                 
+                                    <input type="email" name="Add_Email" id="Add_Email" class="form-control" size="35">                                                                                 
                                 </div>   
                             </div>
                             <div class= "col-md-6">
@@ -427,8 +427,8 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Gender:
                                     </label>                                              
-                                    <input type="radio" name="Add_Gender" id="Add_Gender" class="form-control">Male
-                                    <input type="radio" name="Add_Gender" id="Add_Gender" class="form-control">Female                                             
+                                    <input type="radio" name="Add_Gender" id="Add_Gender" class="form-control" value="1" checked>Male
+                                    <input type="radio" name="Add_Gender" id="Add_Gender" class="form-control" value="0">Female                                             
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
@@ -477,7 +477,7 @@
     <div class="modal fade" id="EditModal">
         <div class="modal-dialog" style ="width: 1250px">
             <div class="modal-content">
-
+                <form action="personal/edit" class="form-inline " style="background-color: white;" method="POST"> 
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <div class = " container-fluid">
@@ -498,68 +498,68 @@
                 <div class="modal-body">
                     <div class="row" style ="padding-left: 2%">                         
                         <div>
-                            <form action="" class="form-inline " style="background-color: white;">                                                                                          
+                                                                                                                     
 							<div class = "col-md-6">
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Employee ID:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Employee_ID" class="form-control" size="35" disabled="">                                                                                 
+                                    <input type="text" name="Edit_Employee_ID" id="Edit_Employee_ID" class="form-control" size="35" readonly>                                                                                 
                                 </div> 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         First name:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_First_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_First_Name" id="Edit_First_Name" class="form-control" size="35">                                                                                 
                                 </div> 
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Last name:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Last_Name" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Last_Name" id="Edit_Last_Name" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Middle initial:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Middle_Initial" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Middle_Initial" id="Edit_Middle_Initial" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Address 1:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Address1" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Address1" id="Edit_Address1" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Address 2:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Address2" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Address2" id="Edit_Address2" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         City:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_City" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_City" id="Edit_City" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         State:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_State" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_State" id="Edit_State" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Zip:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Zip" class="form-control" size="35">                                                                                 
+                                    <input type="number" name="Edit_Zip" id="Edit_Zip" class="form-control" size="35">                                                                                 
                                 </div>   
                             </div>
                             <div class= "col-md-6">
@@ -567,76 +567,80 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Email:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Email" class="form-control" size="35">                                                                                 
+                                    <input type="email" name="Edit_Email" id="Edit_Email" class="form-control" size="35">                                                                                 
                                 </div>   
                             
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Phone number:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Phone_Number" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Phone_Number" id="Edit_Phone_Number" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Social security number:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Social_Security_Number" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Social_Security_Number" id="Edit_Social_Security_Number" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Drivers license
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Drivers_License" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Drivers_License" id="Edit_Drivers_License" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Marital status:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Marital_Status" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Marital_Status" id="Edit_Marital_Status" class="form-control" size="35">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Gender:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Gender" class="form-control" size="35">                                                                                 
+                                    <input type="radio" name="Edit_G" id="Edit_Gender" value="1" class="form-control"> Male
+                                    <input type="radio" name="Edit_G" id="Edit_Gender" value="0" class="form-control"> Female                                                                        
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Shareholder status:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Shareholder_Status" class="form-control" size="35">                                                                                 
+                                    <input type="checkbox" name="Edit_Shareholder_Status" id="Edit_Shareholder_Status" class="form-control" value="1">                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Benefit plan:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Benefit_Plan" class="form-control" size="35">                                                                                 
+                                    <select name="Edit_Benefit_Plan" id="Edit_Benefit_Plan" class="form-control" required>
+                                        <%for(var i = 0; i < data1.length; i++){%>
+                                            <option value="<%=data1[i].Benefit_Plan_ID%>"><%=data1[i].Plan_Name%></option>
+                                        <%}%>
+                                    </select>                                                                                 
                                 </div>   
 
                                 <div style="padding-bottom: 10px">                                           
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Ethnicity:
                                     </label>                                              
-                                    <input type="text" name="" id="Edit_Ethnicity" class="form-control" size="35">                                                                                 
+                                    <input type="text" name="Edit_Ethnicity" id="Edit_Ethnicity" class="form-control" size="35">                                                                                 
                                 </div>     
                                 </div> 
-                            </form>
                         </div>
-                        
                     </div>
                 </div>
                 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    <button type="submit" class="btn btn-primary">Ok</button>
                     <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
                 </div>   
+            </form>
             </div>
         </div>
     </div>         
@@ -729,7 +733,7 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Zip:
                                     </label>                                              
-                                    <input type="text" name="" id="Detail_Zip" class="form-control" size="35" disabled="">                                                                                 
+                                    <input type="number" name="" id="Detail_Zip" class="form-control" size="35" disabled="">                                                                                 
                                 </div>   
                             </div>
                             <div class = "col-md-6">
@@ -737,7 +741,7 @@
                                     <label for="" class = "col-md-4" style="padding-top: 10px">
                                         Email:
                                     </label>                                              
-                                    <input type="text" name="" id="Detail_Email" class="form-control" size="35" disabled="">                                                                                 
+                                    <input type="email" name="" id="Detail_Email" class="form-control" size="35" disabled="">                                                                                 
                                 </div>   
 							
                                 <div style="padding-bottom: 10px">                                           
@@ -909,7 +913,7 @@
         '<i class="fa fa-edit"></i>',
         '</a>',
 
-        '<a rel="tooltip" title="Remove" class="table-action remove" title="Remove">',
+        '<a rel="tooltip" title="Remove" class="table-action remove">',
         '<i class="fa fa-remove"></i>',
         '</a>'
         ].join('');
@@ -957,7 +961,11 @@
                 document.getElementById("Edit_Ethnicity").value= row.Ethnicity;
 
             },
-            'click .remove': function (e, value, row, index) { 
+            'click .remove': function (e, value, row, index) {
+                $.get("personal/delete/"+row.Employee_ID,function(data, status){
+                    alert("Delete completed");
+                });
+
                 $table.bootstrapTable('remove', {
                     field: 'Employee_ID',
                     values: [row.Employee_ID]

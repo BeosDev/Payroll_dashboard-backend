@@ -24,9 +24,7 @@ function getPersonPage(req,res) {
 }
 
 function addPerson(req,res) {
-    var gender = '0', shareholderStatus = '0';
-    if(req.body.Add_Gender == 'on')
-        gender = '1';
+    var shareholderStatus = '0';
     if(req.body.Add_Shareholder_Status == 'on')
         shareholderStatus = '1';
     var addData = {
@@ -44,7 +42,7 @@ function addPerson(req,res) {
         Social_Security_Number:req.body.Add_Social_Security_Number,
         Drivers_License:req.body.Add_Drivers_License,
         Marital_Status:req.body.Add_Marital_Status,
-        Gender:gender,
+        Gender: req.body.Add_Gender,
         Shareholder_Status:shareholderStatus,
         Benefit_Plans: parseInt(req.body.Add_Benefit_Plans),
         Ethnicity:req.body.Add_Ethnicity,
@@ -60,26 +58,30 @@ function addPerson(req,res) {
 }
 
 function editPerson(req,res) {
+    var shareholderStatus = '1';
+    if(req.body.Edit_Shareholder_Status != '1')
+        shareholderStatus = '0';
+        console.log(req.body.Edit_G);
     var editData = {
-        First_Name: res.body.Add_First_Name,
-        Last_Name:res.body.Add_Last_Name,
-        Middle_Initial:res.body.Add_Middle_Initial,
-        Address1:res.body.Add_Address1,
-        Address2:res.body.Add_Address2,
-        City:res.body.Add_City,
-        State:res.body.Add_State,
-        Zip:res.body.Add_Zip,
-        Email:res.body.Add_Email,
-        Phone_Number:res.body.Add_Phone_Number,
-        Social_Security_Number:res.body.Add_Social_Security_Number,
-        Drivers_License:res.body.Add_Drivers_License,
-        Marital_Status:res.body.Add_Marital_Status,
-        Gender:res.body.Add_Gender,
-        Shareholder_Status:res.body.Add_Shareholder_Status,
-        Benefit_Plans:res.body.Add_Benefit_Plans,
-        Ethnicity:res.body.Add_Ethnicity,
+        First_Name: req.body.Edit_First_Name,
+        Last_Name:req.body.Edit_Last_Name,
+        Middle_Initial:req.body.Edit_Middle_Initial,
+        Address1:req.body.Edit_Address1,
+        Address2:req.body.Edit_Address2,
+        City:req.body.Edit_City,
+        State:req.body.Edit_State,
+        Zip:req.body.Edit_Zip!=''?parseInt(req.body.Edit_Zip):0,
+        Email:req.body.Edit_Email,
+        Phone_Number:req.body.Edit_Phone_Number,
+        Social_Security_Number:req.body.Edit_Social_Security_Number,
+        Drivers_License:req.body.Edit_Drivers_License,
+        Marital_Status:req.body.Edit_Marital_Status,
+        Gender:req.body.Edit_G != 0?'1':'0',
+        Shareholder_Status:shareholderStatus,
+        Benefit_Plans:parseInt(req.body.Edit_Benefit_Plan),
+        Ethnicity:req.body.Edit_Ethnicity,
     }
-    var editResult = personModel.editPerson(editData,res.body.Add_Employee_ID);
+    var editResult = personModel.updatePerson(editData,req.body.Edit_Employee_ID);
     editResult.once('results',function(results){
         res.redirect('/admin/personal');
     });
@@ -89,7 +91,7 @@ function editPerson(req,res) {
 }
 
 function deletePerson(req,res) {
-    var deleteResults = personModel.deletePerson(res.param.id);
+    var deleteResults = personModel.deletePerson(req.params.id);
     deleteResults.once('results',function(results){
         res.redirect('/admin/personal');
     });
